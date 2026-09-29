@@ -20,16 +20,6 @@ trong Image / Multimodal / Time series. Nếu nhóm đổi bài tự chọn, đ�
 
 ## Danh sách cần điền trước khi nộp
 
-### Landing page (`index.html`)
-
-- [ ] Thay `<Tên nhóm>` ở tiêu đề, dòng đầu trang và footer — **phải trùng
-      khớp sheet GroupRegistration**
-- [ ] Thay MSSV X / Y / Z bằng mã số thật
-- [ ] Sửa vai trò từng thành viên cho khớp phân công thực tế
-- [ ] Thay link GitHub cá nhân từng người, hoặc **xóa hẳn dòng `.gh`** nếu
-      không có — đề bài ghi rõ không tạo link giả
-- [ ] Thay link kho mã nguồn ở footer
-
 ### Mỗi trang bài con
 
 - [ ] Link notebook Colab (kiểm tra chạy được Run all từ tài khoản khác)
