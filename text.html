@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dữ liệu văn bản — &lt;Tên nhóm&gt;</title>
+<meta name="description" content="Bài tập lớn con dữ liệu văn bản của nhóm &lt;Tên nhóm&gt;, môn Nền tảng lập trình cho phân tích và trực quan dữ liệu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="crumb"><a href="index.html">← Trang chính của nhóm</a></p>
+    <span class="bar" style="display:block;width:3.5rem;height:.35rem;
+      background:var(--v3);margin:0 0 1.25rem"></span>
+    <p class="crumb" style="margin-bottom:.9rem">Text · bắt buộc</p>
+    <h1 class="sub">Dữ liệu văn bản</h1>
+    <p class="lede">Phân loại văn bản tiếng Việt trên tập dữ liệu nhóm tự thu thập, so sánh TF-IDF với biểu diễn embedding.</p>
+  </header>
+
+  <section>
+    <h2>Sản phẩm nộp</h2>
+    <ul class="deliver">
+      <li>
+        <span class="kind">Notebook</span>
+        <a href="#" rel="noopener">Mở trên Google Colab</a>
+        <span class="note">Chạy được Run all từ đầu đến cuối, không lỗi.</span>
+      </li>
+      <li>
+        <span class="kind">Báo cáo</span>
+        <a href="#" rel="noopener">Tải PDF</a>
+        <span class="note">Tóm tắt cách làm, bảng metric và kết luận.</span>
+      </li>
+      <li>
+        <span class="kind">Video trình bày</span>
+        <a href="#" rel="noopener">Xem trên YouTube</a>
+        <span class="note">5–10 phút, chế độ Public hoặc Unlisted.</span>
+      </li>
+    </ul>
+    <p style="margin-top:1.25rem;font-size:.9375rem;color:var(--muted)">
+      Bản notebook trên GitHub:
+      <a href="https://github.com/&lt;tai-khoan&gt;/&lt;ten-repo&gt;" rel="noopener" style="color:inherit">xem trong kho mã nguồn</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Mô tả bài toán và tập dữ liệu</h2>
+    <p style="margin-bottom:1.75rem">
+      &lt;Viết 2–3 câu: dữ liệu nói về điều gì, cần trả lời câu hỏi nào,
+      vì sao chọn tập này.&gt;
+    </p>
+    <table class="stats">
+      <tr><th>Tên tập dữ liệu</th><td>&lt;điền tên · nguồn · cách thu thập&gt;</td></tr>
+      <tr><th>Bài toán</th><td>&lt;phân loại chủ đề / cảm xúc / …&gt;</td></tr>
+      <tr><th>Số mẫu</th><td>&lt;≥ 2000&gt;</td></tr>
+      <tr><th>Ngôn ngữ</th><td>Tiếng Việt</td></tr>
+      <tr><th>Số lớp</th><td>&lt;số lớp · phân bố mẫu mỗi lớp&gt;</td></tr>
+      <tr><th>Tiền xử lý</th><td>&lt;chuẩn hóa unicode · tách từ · loại stopword&gt;</td></tr>
+      <tr><th>Chia dữ liệu</th><td>&lt;tỉ lệ train / val / test&gt;</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Điểm cần làm rõ trong bài</h2>
+    <ul class="stack" style="flex-direction:column;align-items:flex-start;gap:.75rem">
+      <li>Mô tả rõ quy trình crawling: nguồn, khoảng thời gian, số trang, cách loại bỏ trùng lặp.</li>
+      <li>So sánh TF-IDF với embedding trên cùng tập test.</li>
+      <li>Hình đạt điểm sáng tạo: từ hoặc n-gram phân biệt các lớp; confusion matrix kèm ví dụ bị gán sai.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Thành viên nhóm</h2>
+    <table class="stats">
+      <tr><th>Nguyễn Thành Đạt</th><td>MSSV X · Tabular — tiền xử lý, EDA, mô hình</td></tr>
+      <tr><th>Nguyễn Văn Hoàng Khang</th><td>MSSV Y · Text — thu thập, vector hóa, mô hình</td></tr>
+      <tr><th>Nguyễn Thị Hồng Hạnh</th><td>MSSV Z · Image — augmentation, transfer learning</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <span>&lt;Tên nhóm&gt; · Học kỳ 261, năm học 2026–2027</span>
+    <a href="https://github.com/&lt;tai-khoan&gt;/&lt;ten-repo&gt;" rel="noopener">Kho mã nguồn của nhóm</a>
+  </footer>
+
+</div>
+</body>
+</html>

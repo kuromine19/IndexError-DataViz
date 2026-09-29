@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dữ liệu ảnh — &lt;Tên nhóm&gt;</title>
+<meta name="description" content="Bài tập lớn con dữ liệu ảnh của nhóm &lt;Tên nhóm&gt;, môn Nền tảng lập trình cho phân tích và trực quan dữ liệu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="crumb"><a href="index.html">← Trang chính của nhóm</a></p>
+    <span class="bar" style="display:block;width:3.5rem;height:.35rem;
+      background:var(--v4);margin:0 0 1.25rem"></span>
+    <p class="crumb" style="margin-bottom:.9rem">Image · tự chọn</p>
+    <h1 class="sub">Dữ liệu ảnh</h1>
+    <p class="lede">Phân loại ảnh dùng mô hình pretrained làm feature extractor, đối chiếu với fine-tuning nhẹ trên cùng tập test.</p>
+  </header>
+
+  <section>
+    <h2>Sản phẩm nộp</h2>
+    <ul class="deliver">
+      <li>
+        <span class="kind">Notebook</span>
+        <a href="#" rel="noopener">Mở trên Google Colab</a>
+        <span class="note">Chạy được Run all từ đầu đến cuối, không lỗi.</span>
+      </li>
+      <li>
+        <span class="kind">Báo cáo</span>
+        <a href="#" rel="noopener">Tải PDF</a>
+        <span class="note">Tóm tắt cách làm, bảng metric và kết luận.</span>
+      </li>
+      <li>
+        <span class="kind">Video trình bày</span>
+        <a href="#" rel="noopener">Xem trên YouTube</a>
+        <span class="note">5–10 phút, chế độ Public hoặc Unlisted.</span>
+      </li>
+    </ul>
+    <p style="margin-top:1.25rem;font-size:.9375rem;color:var(--muted)">
+      Bản notebook trên GitHub:
+      <a href="https://github.com/&lt;tai-khoan&gt;/&lt;ten-repo&gt;" rel="noopener" style="color:inherit">xem trong kho mã nguồn</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Mô tả bài toán và tập dữ liệu</h2>
+    <p style="margin-bottom:1.75rem">
+      &lt;Viết 2–3 câu: dữ liệu nói về điều gì, cần trả lời câu hỏi nào,
+      vì sao chọn tập này.&gt;
+    </p>
+    <table class="stats">
+      <tr><th>Tên tập dữ liệu</th><td>&lt;điền tên · nguồn · giấy phép&gt;</td></tr>
+      <tr><th>Bài toán</th><td>&lt;phân loại &ge; 3 lớp&gt;</td></tr>
+      <tr><th>Số ảnh</th><td>&lt;≥ 5000 · số ảnh mỗi lớp&gt;</td></tr>
+      <tr><th>Độ phân giải</th><td>&lt;cạnh ngắn ≥ 128 px · cách resize hoặc padding&gt;</td></tr>
+      <tr><th>Mô hình pretrained</th><td>&lt;ResNet50 / MobileNetV3 / ViT-B/16&gt;</td></tr>
+      <tr><th>Augmentation</th><td>&lt;flip · random crop · color jitter · normalize&gt;</td></tr>
+      <tr><th>Chia dữ liệu</th><td>&lt;tỉ lệ train / val / test · tránh rò rỉ&gt;</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Điểm cần làm rõ trong bài</h2>
+    <ul class="stack" style="flex-direction:column;align-items:flex-start;gap:.75rem">
+      <li>Không dùng MNIST, Fashion-MNIST hay CIFAR-10 làm tập chính — các tập này chỉ để minh họa pipeline.</li>
+      <li>Nêu rõ dùng feature extractor (đóng băng backbone) hay fine-tuning nhẹ vài tầng cuối.</li>
+      <li>Hình đạt điểm sáng tạo: các mẫu bị dự đoán sai; so sánh mô hình cổ điển trên vector pretrained với transfer learning.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Thành viên nhóm</h2>
+    <table class="stats">
+      <tr><th>Nguyễn Thành Đạt</th><td>MSSV X · Tabular — tiền xử lý, EDA, mô hình</td></tr>
+      <tr><th>Nguyễn Văn Hoàng Khang</th><td>MSSV Y · Text — thu thập, vector hóa, mô hình</td></tr>
+      <tr><th>Nguyễn Thị Hồng Hạnh</th><td>MSSV Z · Image — augmentation, transfer learning</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <span>&lt;Tên nhóm&gt; · Học kỳ 261, năm học 2026–2027</span>
+    <a href="https://github.com/&lt;tai-khoan&gt;/&lt;ten-repo&gt;" rel="noopener">Kho mã nguồn của nhóm</a>
+  </footer>
+
+</div>
+</body>
+</html>

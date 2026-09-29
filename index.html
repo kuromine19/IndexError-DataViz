@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>&lt;Tên nhóm&gt; — Nền tảng lập trình cho phân tích và trực quan dữ liệu</title>
+<meta name="description" content="Bài tập lớn môn Nền tảng lập trình cho phân tích và trực quan dữ liệu, Đại học Bách Khoa – ĐHQG-HCM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="crumb">Bài tập lớn · Nhóm &lt;Tên nhóm&gt;</p>
+    <h1>Nền tảng lập trình cho phân tích và trực quan dữ liệu</h1>
+    <p class="lede">
+      Ba bài tập lớn con trên ba loại dữ liệu khác nhau — bảng, văn bản và ảnh —
+      đi hết quy trình từ thu thập, tiền xử lý, EDA, trực quan hóa đến huấn luyện
+      mô hình học máy.
+    </p>
+
+    <dl class="facts">
+      <div><dt>Trường</dt><dd>Đại học Bách Khoa – ĐHQG-HCM</dd></div>
+      <div><dt>Khoa</dt><dd>Khoa học và Kỹ thuật Máy tính</dd></div>
+      <div><dt>Học kỳ</dt><dd>261 · Năm học 2026–2027</dd></div>
+      <div><dt>Giảng viên</dt><dd>Lê Thành Sách</dd></div>
+    </dl>
+
+    <div class="plot">
+      <svg id="grid" role="img" aria-label="Ma trận nhiệt minh họa một mảng dữ liệu hai chiều"></svg>
+      <div class="plot-cap">
+        <span>ma trận 2 chiều · tô màu theo giá trị</span>
+        <span class="scale">
+          thấp
+          <span class="swatches">
+            <i style="background:var(--v0)"></i><i style="background:var(--v1)"></i><i style="background:var(--v2)"></i><i style="background:var(--v3)"></i><i style="background:var(--v4)"></i><i style="background:var(--v5)"></i>
+          </span>
+          cao
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Các bài tập lớn con</h2>
+    <ul class="parts">
+      <li>
+        <a href="tabular.html">
+          <span class="bar" style="background:var(--v1)"></span>
+          <span class="kind">Bắt buộc · Tabular</span>
+          <h3>Dữ liệu bảng</h3>
+          <p>Tối thiểu 2000 mẫu và 10 cột, có missing values, cột categorical và numerical.</p>
+          <span class="go">Xem bài</span>
+        </a>
+      </li>
+      <li>
+        <a href="text.html">
+          <span class="bar" style="background:var(--v3)"></span>
+          <span class="kind">Bắt buộc · Text</span>
+          <h3>Dữ liệu văn bản</h3>
+          <p>Tối thiểu 2000 mẫu tiếng Việt, nhóm tự thu thập bằng crawling.</p>
+          <span class="go">Xem bài</span>
+        </a>
+      </li>
+      <li>
+        <a href="image.html">
+          <span class="bar" style="background:var(--v4)"></span>
+          <span class="kind">Tự chọn · Image</span>
+          <h3>Dữ liệu ảnh</h3>
+          <p>Tối thiểu 5000 ảnh, ít nhất 3 lớp, cạnh ngắn ≥ 128 px, dùng mô hình pretrained.</p>
+          <span class="go">Xem bài</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Thành viên nhóm</h2>
+    <div class="team">
+      <div class="member">
+        <span class="bar" style="background:var(--v1)"></span>
+        <span class="name">Nguyễn Thành Đạt</span>
+        <span class="id">MSSV X</span>
+        <span class="role">Tabular — tiền xử lý, EDA, mô hình</span>
+        <span class="gh"><a href="https://github.com/" rel="noopener">github.com/…</a></span>
+      </div>
+      <div class="member">
+        <span class="bar" style="background:var(--v3)"></span>
+        <span class="name">Nguyễn Văn Hoàng Khang</span>
+        <span class="id">MSSV Y</span>
+        <span class="role">Text — thu thập, vector hóa, mô hình</span>
+        <span class="gh"><a href="https://github.com/" rel="noopener">github.com/…</a></span>
+      </div>
+      <div class="member">
+        <span class="bar" style="background:var(--v4)"></span>
+        <span class="name">Nguyễn Thị Hồng Hạnh</span>
+        <span class="id">MSSV Z</span>
+        <span class="role">Image — augmentation, transfer learning</span>
+        <span class="gh"><a href="https://github.com/" rel="noopener">github.com/…</a></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose">
+    <h2>Quy trình chung</h2>
+    <ol class="steps">
+      <li>
+        <span class="n">01</span>
+        <div>
+          <h3>Mô tả tập dữ liệu</h3>
+          <p>Trình bày nguồn gốc, quy mô và ý nghĩa từng trường bằng Markdown,
+          kèm biểu đồ phân phối vẽ bằng Matplotlib, Seaborn hoặc Plotly.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <div>
+          <h3>Chuẩn bị dữ liệu</h3>
+          <p>Xử lý missing values và outliers, encoding cột categorical,
+          scaling cột numerical, chia train / validation / test không rò rỉ dữ liệu.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h3>Phân tích và mô hình hóa</h3>
+          <p>Huấn luyện bằng Scikit-learn, so sánh nhiều mô hình và bộ tham số
+          trên cùng một tập test.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <div>
+          <h3>Tổng kết và mở rộng</h3>
+          <p>Đánh giá qua độ chính xác và confusion matrix, nêu hạn chế
+          và hướng mở rộng kèm số liệu đối chiếu.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Công cụ sử dụng</h2>
+    <ul class="stack">
+      <li>Python 3</li><li>NumPy</li><li>pandas</li><li>Matplotlib</li>
+      <li>Seaborn</li><li>Plotly</li><li>Scikit-learn</li><li>OpenCV</li>
+      <li>Google Colab</li><li>Git</li>
+    </ul>
+  </section>
+
+  <script>
+  (function(){
+    var svg = document.getElementById('grid');
+    if(!svg) return;
+    var cs = getComputedStyle(document.documentElement);
+    var stops = ['--v0','--v1','--v2','--v3','--v4','--v5']
+                  .map(function(v){ return cs.getPropertyValue(v).trim(); });
+    function hex2rgb(h){
+      return [parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
+    }
+    var rgbStops = stops.map(hex2rgb);
+    function color(t){
+      t = Math.max(0, Math.min(1, t));
+      var f = t * (rgbStops.length - 1);
+      var i = Math.min(Math.floor(f), rgbStops.length - 2);
+      var k = f - i, a = rgbStops[i], b = rgbStops[i+1];
+      return 'rgb(' + Math.round(a[0]+(b[0]-a[0])*k) + ','
+                    + Math.round(a[1]+(b[1]-a[1])*k) + ','
+                    + Math.round(a[2]+(b[2]-a[2])*k) + ')';
+    }
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function draw(){
+      var w = svg.clientWidth || svg.parentNode.clientWidth;
+      if(!w) return;
+      var cell = w < 560 ? 13 : (w < 900 ? 16 : 19);
+      var gap = 2;
+      var cols = Math.floor(w / (cell + gap));
+      var rows = w < 560 ? 7 : 9;
+      var h = rows * (cell + gap) - gap;
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+      svg.setAttribute('width', w);
+      svg.setAttribute('height', h);
+      while(svg.firstChild) svg.removeChild(svg.firstChild);
+      var frag = document.createDocumentFragment();
+      for(var r = 0; r < rows; r++){
+        for(var c = 0; c < cols; c++){
+          var x = c / cols, y = r / rows;
+          var t = 0.5 + 0.5 * Math.sin(x * 7.4 + y * 2.1) * Math.cos(y * 3.3 - x * 1.7);
+          t = t * 0.82 + 0.09;
+          var rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
+          rect.setAttribute('x', c * (cell + gap));
+          rect.setAttribute('y', r * (cell + gap));
+          rect.setAttribute('width', cell);
+          rect.setAttribute('height', cell);
+          rect.setAttribute('fill', color(t));
+          if(!reduce){
+            rect.style.animationDelay = ((c * 9 + r * 26) / 1000).toFixed(3) + 's';
+          } else {
+            rect.style.opacity = 1; rect.style.animation = 'none';
+          }
+          frag.appendChild(rect);
+        }
+      }
+      svg.appendChild(frag);
+    }
+    draw();
+    var timer;
+    window.addEventListener('resize', function(){
+      clearTimeout(timer); timer = setTimeout(draw, 160);
+    });
+  })();
+  </script>
+
+  <footer>
+    <span>&lt;Tên nhóm&gt; · Học kỳ 261, năm học 2026–2027</span>
+    <a href="https://github.com/&lt;tai-khoan&gt;/&lt;ten-repo&gt;" rel="noopener">Kho mã nguồn của nhóm</a>
+  </footer>
+
+</div>
+</body>
+</html>
