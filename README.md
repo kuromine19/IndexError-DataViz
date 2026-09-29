@@ -18,25 +18,6 @@ Nhóm 3 người làm 3 loại dữ liệu: Tabular + Text bắt buộc, cộng 
 trong Image / Multimodal / Time series. Nếu nhóm đổi bài tự chọn, đổi tên
 `image.html` và sửa mục tương ứng trong `index.html`.
 
-## Đưa lên GitHub Pages
-
-1. Tạo repository công khai, ví dụ `<tên-nhóm>-dataviz`.
-2. Đẩy toàn bộ tệp trong thư mục này lên nhánh `main`:
-
-   ```bash
-   git init
-   git add .
-   git commit -m "Landing page bài tập lớn"
-   git branch -M main
-   git remote add origin https://github.com/<tài-khoản>/<repo>.git
-   git push -u origin main
-   ```
-
-3. **Settings → Pages** → Source: *Deploy from a branch* → Branch `main`,
-   thư mục `/ (root)` → **Save**.
-4. Trang chạy tại `https://<tài-khoản>.github.io/<repo>/`.
-5. Điền địa chỉ này vào sheet **GroupLink** trước hạn đăng ký.
-
 ## Danh sách cần điền trước khi nộp
 
 ### Landing page (`index.html`)
