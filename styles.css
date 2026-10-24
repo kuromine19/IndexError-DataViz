@@ -22,9 +22,9 @@
   --footer:#0E1116;
   --footer-ink:#C9CED6;
 
-  --sans:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --sans:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   /* Georgia thiếu glyph tiếng Việt dựng sẵn (ề, ế vỡ dấu) nên không dùng làm dự phòng */
-  --serif:"Newsreader","Times New Roman","Noto Serif",serif;
+  --serif:"Lora","Times New Roman","Noto Serif",serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 
   --gutter:clamp(16px,5vw,48px);
@@ -158,7 +158,7 @@ h3{margin:0;font-weight:600;letter-spacing:-.01em}
 .minis{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .minis div{padding:14px;border-radius:10px;background:var(--bg)}
 .minis dt{font-size:12px;color:var(--muted)}
-.minis dd{margin:2px 0 0;font-family:var(--mono);font-size:22px;font-weight:700}
+.minis dd{margin:2px 0 0;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
 .card-foot{margin-top:auto;padding-top:18px;border-top:1px solid var(--rule-2);display:flex;flex-wrap:wrap;
   align-items:center;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
 .card-foot strong{color:var(--ink);font-weight:600}
@@ -169,7 +169,7 @@ h3{margin:0;font-weight:600;letter-spacing:-.01em}
 .kpi{padding:20px;border-radius:14px;background:var(--surface);border:1px solid var(--rule)}
 .kpi dt{font-size:13px;color:var(--muted)}
 .kpi dd{margin:4px 0 0}
-.kpi .v{display:block;font-family:var(--mono);font-size:clamp(24px,2.3vw,30px);white-space:nowrap;font-weight:700;line-height:1.1;color:var(--ink)}
+.kpi .v{display:block;font-variant-numeric:tabular-nums;font-size:clamp(24px,2.3vw,30px);white-space:nowrap;font-weight:700;line-height:1.1;color:var(--ink)}
 .kpi .d{display:block;margin-top:6px;font-size:13px;color:var(--ink-2)}
 .kpi .d b{color:var(--good);font-weight:600}
 
@@ -205,7 +205,7 @@ table.data th:first-child,table.data td:first-child{text-align:left}
 table.data thead th{font-family:var(--mono);font-weight:500;font-size:12px;color:var(--muted);background:var(--surface-2)}
 table.data tbody tr:last-child td,table.data tbody tr:last-child th{border-bottom:0}
 table.data tbody th{font-weight:500}
-table.data td.num{font-family:var(--mono)}
+table.data td.num{font-variant-numeric:tabular-nums}
 table.data tr.hl td,table.data tr.hl th{background:var(--accent-soft)}
 table.data td.best{font-weight:700;color:var(--accent)}
 table.data.wrap td,table.data.wrap th{white-space:normal}
@@ -239,7 +239,7 @@ table.kv tr:last-child th,table.kv tr:last-child td{border-bottom:0}
 /* steps */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
 .steps li{display:flex;flex-direction:column;gap:14px;padding:32px 28px 32px 0;border-bottom:1px solid var(--rule)}
-.steps .n{font-family:var(--mono);font-size:40px;font-weight:700;line-height:1;color:var(--accent)}
+.steps .n{font-family:var(--serif);font-size:40px;font-weight:600;line-height:1;color:var(--accent)}
 .steps h3{font-size:19px}
 .steps p{margin:0;font-size:15px;color:var(--ink-2)}
 
