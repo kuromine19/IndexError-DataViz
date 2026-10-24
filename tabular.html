@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Dữ liệu bảng — IndexError;</title>
+<title>Bài 1: Dữ liệu bảng | IndexError;</title>
 <meta name="description" content="Bài tập con 1 của nhóm IndexError: dự đoán khách hàng rời bỏ ngân hàng trên dữ liệu bảng Bank Customer Churn.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Lora:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <a class="skip" href="#main">Bỏ qua điều hướng</a>
@@ -30,7 +30,7 @@
     <div class="hero-grid">
       <div class="hero-main">
         <p class="crumb"><a href="index.html">← Trang chính</a></p>
-        <p class="eyebrow">01 / tabular · bắt buộc</p>
+        <p class="eyebrow">Bài 1 · dữ liệu bảng · bắt buộc</p>
         <h1 class="sub">Dự đoán khách hàng rời bỏ ngân hàng</h1>
         <p class="lede">Phân loại nhị phân trên Bank Customer Churn: tìm đặc điểm phân biệt khách hàng rời bỏ, và đo xem xử lý mất cân bằng giúp bắt thêm được bao nhiêu người.</p>
         <div class="actions">
@@ -39,7 +39,7 @@
         </div>
       </div>
       <aside class="info" aria-label="Tóm tắt bài">
-        <div class="info-head"><span>&gt;&gt;&gt; df.shape</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <h2 class="info-title">Tóm tắt bài</h2>
         <dl>
           <dt>Dữ liệu</dt><dd>Bank Customer Churn (Churn_Modelling)</dd>
           <dt>Quy mô</dt><dd>10.000 dòng × 14 cột</dd>
@@ -57,7 +57,7 @@
   <!-- Kết quả -->
   <section class="section container" id="ket-qua" aria-labelledby="h-kq">
     <div class="section-head">
-      <div><span class="num">Tóm tắt</span><h2 id="h-kq">Kết quả trên tập Test</h2></div>
+      <div><h2 id="h-kq">Kết quả trên tập Test</h2></div>
       <p>Mô hình, siêu tham số và ngưỡng chốt trên Validation; Test chỉ dùng đúng một lần.</p>
     </div>
     <dl class="kpis">
@@ -100,7 +100,7 @@
   <!-- 1. EDA -->
   <section class="section container" id="eda" aria-labelledby="h-eda">
     <div class="section-head">
-      <div><span class="num">§ 01</span><h2 id="h-eda">Mô tả dữ liệu &amp; EDA</h2></div>
+      <div><h2 id="h-eda">Mô tả dữ liệu &amp; EDA</h2></div>
       <p>10.000 khách hàng của một ngân hàng ở Pháp, Đức và Tây Ban Nha. Sau khi bỏ 3 cột định danh còn 10 feature.</p>
     </div>
 
@@ -109,42 +109,36 @@
         <tr><th>Feature</th><td>6 numerical (CreditScore, Age, Tenure, Balance, NumOfProducts, EstimatedSalary) · 2 binary (HasCrCard, IsActiveMember) · 2 categorical (Geography, Gender)</td></tr>
         <tr><th>Missing values</th><td>1.521 ô thiếu ở 5 cột (2,1–3,9% mỗi cột), 14,1% số dòng có ít nhất một ô thiếu. Nhóm tự tạo theo cơ chế MCAR với seed cố định vì dữ liệu gốc không thiếu.</td></tr>
         <tr><th>Trùng lặp</th><td>0 dòng trùng · 0 CustomerId trùng</td></tr>
-        <tr><th>Mất cân bằng</th><td>7.963 ở lại (79,6%) · 2.037 rời bỏ (20,4%) — luôn đoán “ở lại” đã đạt Accuracy 79,6%</td></tr>
-        <tr><th>Outlier (IQR)</th><td>Age 348 giá trị (3,6%) · NumOfProducts 60 (0,6%) · CreditScore 15 (0,15%) — giữ lại, dùng RobustScaler</td></tr>
+        <tr><th>Mất cân bằng</th><td>7.963 ở lại (79,6%) · 2.037 rời bỏ (20,4%). Chỉ cần luôn đoán “ở lại” đã đạt Accuracy 79,6%</td></tr>
+        <tr><th>Outlier (IQR)</th><td>Age 348 giá trị (3,6%) · NumOfProducts 60 (0,6%) · CreditScore 15 (0,15%). Nhóm giữ lại và dùng RobustScaler</td></tr>
       </table>
     </div>
 
     <div class="figs" style="margin-top:20px">
       <figure class="fig">
         <a class="plate wide" href="assets/tabular/missing.png"><img src="assets/tabular/missing.png" width="1384" height="384" loading="lazy" alt="Tỉ lệ missing theo cột và so sánh tỉ lệ thiếu giữa hai lớp."></a>
-        <figcaption><span class="q">Việc thiếu dữ liệu có phụ thuộc vào nhãn không?</span>
-          <span><strong>Không:</strong> tỉ lệ thiếu ở hai lớp gần như bằng nhau (Age 3,8% so với 3,5%), đúng cơ chế MCAR — nên điền median/mode thay vì xoá 14% số dòng.</span></figcaption>
+        <figcaption>Tỉ lệ giá trị thiếu theo cột (trái) và theo từng lớp (phải). Tỉ lệ thiếu ở hai lớp gần như bằng nhau, ví dụ Age là 3,8% so với 3,5%, đúng với cơ chế MCAR mà nhóm tạo ra. Vì vậy nhóm điền median/mode thay vì xoá 14% số dòng.</figcaption>
       </figure>
       <figure class="fig">
         <a class="plate wide" href="assets/tabular/numeric-dist.png"><img src="assets/tabular/numeric-dist.png" width="2182" height="715" loading="lazy" alt="Histogram và boxplot sáu biến số."></a>
-        <figcaption><span class="q">Phân phối các biến số quyết định cách scale ra sao?</span>
-          <span><strong>Age lệch phải (skew 1,01), Balance có hai đỉnh vì 35,2% số dư bằng 0</strong> — từ đó tạo đặc trưng <code>IsZeroBalance</code>; EstimatedSalary gần như phân phối đều.</span></figcaption>
+        <figcaption>Phân phối các biến số. Age lệch phải (skew 1,01). Balance có hai đỉnh vì 35,2% khách hàng có số dư bằng 0, nên nhóm tạo thêm đặc trưng <code>IsZeroBalance</code>. EstimatedSalary gần như phân phối đều.</figcaption>
       </figure>
       <figure class="fig">
         <a class="plate wide" href="assets/tabular/churn-by-category.png"><img src="assets/tabular/churn-by-category.png" width="1984" height="384" loading="lazy" alt="Tỉ lệ rời bỏ theo Geography, Gender, NumOfProducts và IsActiveMember so với trung bình 20%."></a>
-        <figcaption><span class="q">Nhóm khách hàng nào rời bỏ nhiều hơn mức chung 20%?</span>
-          <span><strong>NumOfProducts phi tuyến hoàn toàn:</strong> 2 sản phẩm chỉ 7,6% nhưng 3 sản phẩm 82,7%. Khách Đức rời bỏ gấp đôi (32,4%), nữ 25,1% so với nam 16,5%, không hoạt động 26,9% so với 14,3%.</span></figcaption>
+        <figcaption>Tỉ lệ rời bỏ theo từng nhóm, đường nét đứt là mức chung 20%. NumOfProducts có quan hệ không tuyến tính: dùng 2 sản phẩm chỉ 7,6% rời bỏ nhưng 3 sản phẩm lên tới 82,7%. Khách hàng ở Đức rời bỏ gấp đôi (32,4%), nữ nhiều hơn nam (25,1% so với 16,5%), người không hoạt động nhiều hơn người hoạt động (26,9% so với 14,3%).</figcaption>
       </figure>
       <figure class="fig">
         <a class="plate wide" href="assets/tabular/churn-by-numeric.png"><img src="assets/tabular/churn-by-numeric.png" width="1784" height="384" loading="lazy" alt="Đường mật độ Age, Balance, CreditScore theo hai lớp."></a>
-        <figcaption><span class="q">Biến số nào tách được hai lớp?</span>
-          <span><strong>Age tách rõ nhất:</strong> median nhóm rời bỏ là 45 tuổi so với 36; CreditScore gần như trùng khít giữa hai lớp.</span></figcaption>
+        <figcaption>Phân phối Age, Balance và CreditScore của hai lớp. Age tách hai lớp rõ nhất: tuổi trung vị của nhóm rời bỏ là 45, của nhóm ở lại là 36. CreditScore của hai lớp gần như trùng nhau.</figcaption>
       </figure>
       <div class="figs two">
         <figure class="fig">
           <a class="plate" href="assets/tabular/correlation.png"><img src="assets/tabular/correlation.png" width="807" height="703" loading="lazy" alt="Ma trận tương quan Pearson giữa các feature và Exited."></a>
-          <figcaption><span class="q">Có đa cộng tuyến không?</span>
-            <span><strong>Không</strong> — cặp mạnh nhất chỉ r = −0,30. NumOfProducts có r = −0,05 với Exited dù là feature mạnh nhất, nên Pearson ở đây gây hiểu nhầm.</span></figcaption>
+          <figcaption>Ma trận tương quan Pearson. Không có đa cộng tuyến, cặp mạnh nhất chỉ có r = −0,30. NumOfProducts có r = −0,05 với Exited dù thực ra là feature mạnh nhất, nên không thể chỉ dựa vào hệ số Pearson.</figcaption>
         </figure>
         <figure class="fig">
           <a class="plate" href="assets/tabular/target.png"><img src="assets/tabular/target.png" width="1050" height="384" loading="lazy" alt="Phân phối biến mục tiêu Exited."></a>
-          <figcaption><span class="q">Mất cân bằng tới mức nào?</span>
-            <span><strong>3,9 : 1</strong> — cần chia tập phân tầng, dùng class weight và đánh giá bằng F1, Recall, PR-AUC thay vì Accuracy.</span></figcaption>
+          <figcaption>Phân phối biến mục tiêu. Tỉ lệ ở lại so với rời bỏ là 3,9 : 1, nên nhóm chia tập phân tầng, dùng class weight và đánh giá bằng F1, Recall, PR-AUC thay vì Accuracy.</figcaption>
         </figure>
       </div>
     </div>
@@ -161,7 +155,7 @@
           <tr><th scope="row">63–70</th><td class="num">222</td><td class="num">27,0%</td></tr>
           <tr><th scope="row">&gt; 70</th><td class="num">126</td><td class="num">8,7%</td></tr>
         </tbody>
-        <caption>Tỉ lệ rời bỏ tăng tới khoảng 60 tuổi rồi giảm lại — cắt bỏ outlier Age sẽ làm mất đoạn giảm này.</caption>
+        <caption>Tỉ lệ rời bỏ tăng dần tới khoảng 60 tuổi rồi giảm lại. Nếu cắt bỏ outlier của Age thì mô hình sẽ mất đoạn giảm này.</caption>
       </table>
     </div>
   </section>
@@ -169,7 +163,7 @@
   <!-- 2. Chuẩn bị -->
   <section class="section container" id="chuan-bi" aria-labelledby="h-cb">
     <div class="section-head">
-      <div><span class="num">§ 02</span><h2 id="h-cb">Chuẩn bị dữ liệu</h2></div>
+      <div><h2 id="h-cb">Chuẩn bị dữ liệu</h2></div>
       <p>Mọi bước học tham số đều nằm trong <code>Pipeline</code> và chỉ <code>fit</code> trên Train để không rò rỉ dữ liệu.</p>
     </div>
 
@@ -193,8 +187,7 @@
     <div class="figs" style="margin-top:20px">
       <figure class="fig">
         <a class="plate wide" href="assets/tabular/scaling.png"><img src="assets/tabular/scaling.png" width="1784" height="684" loading="lazy" alt="Phân phối Age và Balance: gốc, StandardScaler, RobustScaler."></a>
-        <figcaption><span class="q">Trước và sau khi điền thiếu và scale: StandardScaler hay RobustScaler?</span>
-          <span><strong>RobustScaler giữ thân phân phối quanh 0 với IQR bằng 1,</strong> còn StandardScaler bị các giá trị Age lớn kéo dài đuôi phải.</span></figcaption>
+        <figcaption>Age và Balance trước và sau khi scale. RobustScaler giữ phần lớn dữ liệu quanh 0, còn StandardScaler bị các giá trị Age lớn kéo dài đuôi bên phải, nên nhóm chọn RobustScaler.</figcaption>
       </figure>
     </div>
   </section>
@@ -202,7 +195,7 @@
   <!-- 3. Mô hình -->
   <section class="section container" id="mo-hinh" aria-labelledby="h-mh">
     <div class="section-head">
-      <div><span class="num">§ 03</span><h2 id="h-mh">Phân tích &amp; mô hình hoá</h2></div>
+      <div><h2 id="h-mh">Phân tích &amp; mô hình hoá</h2></div>
       <p>Hai baseline và ba thuật toán, mỗi thuật toán chạy có và không có <code>class_weight='balanced'</code>. Thước đo chính: F1 lớp rời bỏ.</p>
     </div>
 
@@ -218,41 +211,38 @@
           <tr><th scope="row">HistGradientBoosting</th><td class="num">0,864</td><td class="num">0,766</td><td class="num">0,480</td><td class="num">0,590</td><td class="num best">0,884</td><td class="num best">0,724</td></tr>
           <tr><th scope="row">HistGradientBoosting + balanced</th><td class="num">0,828</td><td class="num">0,561</td><td class="num">0,719</td><td class="num">0,630</td><td class="num">0,876</td><td class="num">0,718</td></tr>
         </tbody>
-        <caption>class_weight tăng Recall ở cả ba thuật toán nhưng ROC-AUC gần như không đổi — nó dịch ranh giới quyết định chứ không làm mô hình phân biệt tốt hơn.</caption>
+        <caption>class_weight tăng Recall ở cả ba thuật toán nhưng ROC-AUC gần như không đổi. Nghĩa là nó chỉ dịch ranh giới quyết định, không làm mô hình phân biệt hai lớp tốt hơn.</caption>
       </table>
     </div>
 
     <div class="figs two" style="margin-top:20px">
       <figure class="fig">
         <a class="plate" href="assets/tabular/class-weight.png"><img src="assets/tabular/class-weight.png" width="1314" height="422" loading="lazy" alt="So sánh Recall và F1 của ba thuật toán khi có và không có class_weight."></a>
-        <figcaption><span class="q">class_weight='balanced' thay đổi Recall và F1 thế nào?</span>
-          <span><strong>Recall LogReg 0,36 → 0,79, RF 0,49 → 0,65, HGB 0,48 → 0,72;</strong> F1 cũng tăng ở cả ba, đổi lại Precision giảm.</span></figcaption>
+        <figcaption>Recall và F1 khi có và không có <code>class_weight='balanced'</code>. Recall tăng ở cả ba thuật toán: Logistic Regression từ 0,36 lên 0,79, Random Forest từ 0,49 lên 0,65, HistGradientBoosting từ 0,48 lên 0,72. Đổi lại Precision giảm.</figcaption>
       </figure>
       <figure class="fig">
         <a class="plate" href="assets/tabular/threshold.png"><img src="assets/tabular/threshold.png" width="850" height="396" loading="lazy" alt="Precision, Recall, F1 của Random Forest theo ngưỡng từ 0,1 đến 0,9 trên Validation."></a>
-        <figcaption><span class="q">Ngưỡng 0,5 có tối ưu cho F1 không?</span>
-          <span><strong>Không — 0,61 cho F1 0,646</strong> (Precision 0,693, Recall 0,605) so với 0,634 ở ngưỡng 0,5. F1 khá phẳng trong khoảng 0,55–0,65 nên lựa chọn không nhạy nhiễu.</span></figcaption>
+        <figcaption>Precision, Recall và F1 của Random Forest theo ngưỡng, đo trên Validation. Ngưỡng 0,61 cho F1 cao nhất là 0,646, nhỉnh hơn mức 0,634 ở ngưỡng mặc định 0,5. Đường F1 khá phẳng trong khoảng 0,55 đến 0,65 nên kết quả không quá nhạy với con số cụ thể.</figcaption>
       </figure>
     </div>
 
     <div class="callout" style="margin-top:20px">
       <strong>GridSearchCV 5-fold</strong> trên Random Forest và HistGradientBoosting với <code>class_weight</code> nằm trong lưới: cả hai đều tự chọn <code>balanced</code>.
-      Sau tinh chỉnh F1 Validation là 0,634 so với 0,630 — chênh lệch nằm trong sai số, nhóm chọn Random Forest vì permutation importance dễ diễn giải theo cột gốc.
+      Sau tinh chỉnh F1 Validation là 0,634 so với 0,630, chênh lệch nằm trong sai số. Nhóm chọn Random Forest vì permutation importance dễ diễn giải theo cột gốc.
     </div>
   </section>
 
   <!-- 4. Đánh giá -->
   <section class="section container" id="danh-gia" aria-labelledby="h-dg">
     <div class="section-head">
-      <div><span class="num">§ 04</span><h2 id="h-dg">Đánh giá &amp; phân tích lỗi</h2></div>
+      <div><h2 id="h-dg">Đánh giá &amp; phân tích lỗi</h2></div>
       <p>Bốn cấu hình trên cùng tập Test, mỗi lần chỉ thay đổi một thứ để thấy đóng góp của từng kỹ thuật.</p>
     </div>
 
     <div class="figs">
       <figure class="fig">
         <a class="plate wide" href="assets/tabular/test-eval.png"><img src="assets/tabular/test-eval.png" width="1924" height="484" loading="lazy" alt="Confusion matrix ngưỡng 0,61, đường ROC và đường Precision–Recall trên tập Test."></a>
-        <figcaption><span class="q">Mô hình cuối hoạt động thế nào trên dữ liệu chưa từng thấy?</span>
-          <span><strong>Bắt đúng 183, bỏ sót 122, báo nhầm 85 trên 1.500 khách hàng.</strong> Hai mô hình cây vượt Logistic Regression rõ nhất ở đường PR (AP 0,71 so với 0,64).</span></figcaption>
+        <figcaption>Ma trận nhầm lẫn, đường ROC và đường Precision–Recall trên tập Test. Mô hình bắt đúng 183 người, bỏ sót 122 và báo nhầm 85. Hai mô hình cây hơn Logistic Regression rõ nhất ở đường Precision–Recall (AP 0,71 so với 0,64).</figcaption>
       </figure>
     </div>
 
@@ -272,25 +262,21 @@
     <div class="figs" style="margin-top:20px">
       <figure class="fig">
         <a class="plate wide" href="assets/tabular/improvement-steps.png"><img src="assets/tabular/improvement-steps.png" width="1284" height="483" loading="lazy" alt="Precision, Recall, F1 qua bốn bước cải tiến trên tập Test."></a>
-        <figcaption><span class="q">Từng bước cải tiến giúp bắt thêm bao nhiêu khách hàng rời bỏ?</span>
-          <span><strong>class_weight kéo Recall lên, còn chọn ngưỡng kéo Precision về.</strong> Mô hình cuối bắt thêm 70 người so với baseline (+62%), F1 +0,146.</span></figcaption>
+        <figcaption>Precision, Recall và F1 qua bốn bước cải tiến trên cùng tập Test. Thêm class_weight làm Recall tăng mạnh, còn chọn lại ngưỡng giúp Precision tăng trở lại. Mô hình cuối bắt thêm 70 người so với baseline (tăng 62%), F1 tăng 0,146.</figcaption>
       </figure>
       <div class="figs two">
         <figure class="fig">
           <a class="plate" href="assets/tabular/feature-importance.png"><img src="assets/tabular/feature-importance.png" width="884" height="484" loading="lazy" alt="Permutation importance theo mức giảm PR-AUC trên tập Test."></a>
-          <figcaption><span class="q">Đặc điểm nào quyết định khả năng rời bỏ?</span>
-            <span><strong>NumOfProducts (−0,284 PR-AUC) và Age (−0,243)</strong> vượt trội; IsActiveMember, Geography, Balance nhỏ hơn khoảng bốn lần; EstimatedSalary gần như vô dụng — khớp với EDA.</span></figcaption>
+          <figcaption>Permutation importance, đo bằng mức giảm PR-AUC khi xáo trộn từng cột. NumOfProducts (0,284) và Age (0,243) quan trọng hơn hẳn. IsActiveMember, Geography và Balance nhỏ hơn khoảng bốn lần, còn EstimatedSalary gần như không đóng góp gì. Kết quả này khớp với phần EDA.</figcaption>
         </figure>
         <figure class="fig">
           <a class="plate" href="assets/tabular/categorical.png"><img src="assets/tabular/categorical.png" width="1984" height="384" loading="lazy" alt="Phân phối các biến categorical và binary."></a>
-          <figcaption><span class="q">Mã hoá biến phân loại thế nào?</span>
-            <span><strong>Mọi biến categorical có ≤ 3 giá trị</strong> và nhóm nhỏ nhất ≥ 24,7%, nên One-Hot là đủ, không cần gộp nhóm hiếm.</span></figcaption>
+          <figcaption>Phân phối các biến phân loại và nhị phân. Biến nào cũng có tối đa 3 giá trị và nhóm nhỏ nhất chiếm từ 24,7% trở lên, nên dùng One-Hot là đủ, không cần gộp nhóm hiếm.</figcaption>
         </figure>
       </div>
       <figure class="fig">
         <a class="plate wide" href="assets/tabular/error-by-age.png"><img src="assets/tabular/error-by-age.png" width="2184" height="413" loading="lazy" alt="Recall và Precision của lớp rời bỏ theo Geography, NumOfProducts, IsActiveMember và nhóm tuổi trên tập Test."></a>
-        <figcaption><span class="q">Mô hình bỏ sót ai?</span>
-          <span><strong>Khách hàng trẻ: Recall chỉ 0,12 ở nhóm dưới 30 tuổi</strong> so với 0,77–0,78 ở nhóm 40–59. Người bị bỏ sót trẻ hơn (41 so với 49 tuổi) và hoạt động nhiều hơn (47% so với 26%) — trông giống khách trung thành, dữ liệu hiện có không chứa tín hiệu để tách họ.</span></figcaption>
+        <figcaption>Recall và Precision của lớp rời bỏ theo từng nhóm khách hàng. Mô hình bỏ sót nhiều nhất ở khách hàng trẻ: Recall chỉ 0,12 ở nhóm dưới 30 tuổi, trong khi nhóm 40–59 đạt 0,77–0,78. Những người bị bỏ sót trẻ hơn (41 so với 49 tuổi) và hoạt động nhiều hơn (47% so với 26%), tức là trông giống khách hàng trung thành.</figcaption>
       </figure>
     </div>
 
@@ -312,7 +298,7 @@
   <!-- 5. Kết luận -->
   <section class="section container" id="ket-luan" aria-labelledby="h-kl">
     <div class="section-head">
-      <div><span class="num">§ 05</span><h2 id="h-kl">Kết luận, hạn chế &amp; hướng phát triển</h2></div>
+      <div><h2 id="h-kl">Kết luận, hạn chế &amp; hướng phát triển</h2></div>
     </div>
     <div class="prose">
       <p><strong>Kết luận.</strong> Yếu tố quyết định nhất là số sản phẩm và tuổi, sau đó mới tới mức độ hoạt động và quốc gia. Nhóm khách hàng nên ưu tiên chăm sóc là người 40–60 tuổi, ở Đức, không hoạt động thường xuyên, đang dùng 1 sản phẩm hoặc từ 3 sản phẩm trở lên. F1 trên Validation (0,646) và Test (0,639) gần nhau, cho thấy việc chọn ngưỡng không bị overfit.</p>

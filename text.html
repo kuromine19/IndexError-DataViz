@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Dữ liệu văn bản — IndexError;</title>
-<meta name="description" content="Dữ liệu văn bản — bài tập lớn con của nhóm IndexError, môn Nền tảng lập trình cho phân tích và trực quan dữ liệu.">
+<title>Dữ liệu văn bản | IndexError;</title>
+<meta name="description" content="Dữ liệu văn bản, bài tập lớn con của nhóm IndexError, môn Nền tảng lập trình cho phân tích và trực quan dữ liệu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Lora:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <a class="skip" href="#main">Bỏ qua điều hướng</a>
@@ -30,10 +30,10 @@
     <div class="hero-grid">
       <div class="hero-main">
         <p class="crumb"><a href="index.html">← Trang chính</a></p>
-        <p class="eyebrow">02 / text · bắt buộc</p>
+        <p class="eyebrow">Bài 2 · dữ liệu văn bản · bắt buộc</p>
         <h1 class="sub">Phân loại văn bản tiếng Anh</h1>
-        <p class="lede">Phân loại văn bản tiếng Anh, so sánh biểu diễn TF-IDF với embedding trên cùng tập test.</p>
-        <p><span class="tag muted">Đang thực hiện — kết quả sẽ cập nhật khi notebook hoàn thành</span></p>
+        <p class="lede">Bài này phân loại văn bản tiếng Anh và so sánh hai cách biểu diễn là TF-IDF và embedding trên cùng một tập test.</p>
+        <p class="status">Bài này đang làm, kết quả sẽ được cập nhật khi notebook xong.</p>
       </div>
     </div>
   </div>
@@ -42,8 +42,8 @@
 <main id="main">
   <section class="section container" aria-labelledby="h-nop">
     <div class="section-head">
-      <div><span class="num">§ 01</span><h2 id="h-nop">Sản phẩm nộp</h2></div>
-      <p>Notebook phải chạy được Run all từ tài khoản khác.</p>
+      <div><h2 id="h-nop">Sản phẩm nộp</h2></div>
+      <p>Notebook cần chạy được Run all từ tài khoản khác.</p>
     </div>
     <ul class="deliver">
       <li><span class="kind">Notebook</span><span class="pending">Chưa cập nhật</span><span class="note">Google Colab + bản trên GitHub.</span></li>
@@ -54,28 +54,28 @@
 
   <section class="section container" aria-labelledby="h-data">
     <div class="section-head">
-      <div><span class="num">§ 02</span><h2 id="h-data">Bài toán &amp; tập dữ liệu</h2></div>
-      <p>Các trường cần điền khi có dữ liệu.</p>
+      <div><h2 id="h-data">Bài toán &amp; tập dữ liệu</h2></div>
+      <p>Các thông tin này sẽ điền khi có dữ liệu.</p>
     </div>
     <div class="table-wrap">
       <table class="kv">
-        <tr><th>Tên tập dữ liệu</th><td><span class="pending-text">Chưa cập nhật</span> — nguồn · giấy phép · cách thu thập</td></tr>
-        <tr><th>Bài toán</th><td><span class="pending-text">Chưa cập nhật</span> — phân loại chủ đề / cảm xúc / …</td></tr>
-        <tr><th>Số mẫu</th><td><span class="pending-text">Chưa cập nhật</span> — ≥ 2.000</td></tr>
-        <tr><th>Ngôn ngữ</th><td><span class="pending-text">Chưa cập nhật</span> — Tiếng Anh</td></tr>
-        <tr><th>Số lớp</th><td><span class="pending-text">Chưa cập nhật</span> — số lớp · phân bố mẫu mỗi lớp</td></tr>
-        <tr><th>Tiền xử lý</th><td><span class="pending-text">Chưa cập nhật</span> — lowercase · tokenize · loại stopword · lemmatize</td></tr>
-        <tr><th>Chia dữ liệu</th><td><span class="pending-text">Chưa cập nhật</span> — tỉ lệ train / val / test</td></tr>
+        <tr><th>Tên tập dữ liệu</th><td>nguồn, giấy phép, cách thu thập <span class="pending-text">(chưa cập nhật)</span></td></tr>
+        <tr><th>Bài toán</th><td>phân loại chủ đề / cảm xúc / … <span class="pending-text">(chưa cập nhật)</span></td></tr>
+        <tr><th>Số mẫu</th><td>≥ 2.000 <span class="pending-text">(chưa cập nhật)</span></td></tr>
+        <tr><th>Ngôn ngữ</th><td>tiếng Anh <span class="pending-text">(chưa cập nhật)</span></td></tr>
+        <tr><th>Số lớp</th><td>số lớp · phân bố mẫu mỗi lớp <span class="pending-text">(chưa cập nhật)</span></td></tr>
+        <tr><th>Tiền xử lý</th><td>lowercase, tokenize, loại stopword, lemmatize <span class="pending-text">(chưa cập nhật)</span></td></tr>
+        <tr><th>Chia dữ liệu</th><td>tỉ lệ train / val / test <span class="pending-text">(chưa cập nhật)</span></td></tr>
       </table>
     </div>
   </section>
 
   <section class="section container" aria-labelledby="h-todo">
     <div class="section-head">
-      <div><span class="num">§ 03</span><h2 id="h-todo">Điểm cần làm rõ trong bài</h2></div>
+      <div><h2 id="h-todo">Điểm cần làm rõ trong bài</h2></div>
     </div>
     <ul class="checklist">
-      <li>Mô tả rõ nguồn dữ liệu và cách thu thập: nguồn, khoảng thời gian, cách loại bỏ trùng lặp và mẫu nhiễu.</li>
+      <li>Mô tả rõ nguồn dữ liệu, cách thu thập, cách loại bỏ trùng lặp và mẫu nhiễu.</li>
       <li>So sánh TF-IDF với embedding trên cùng tập test.</li>
       <li>Hình đạt điểm sáng tạo: từ hoặc n-gram phân biệt các lớp; confusion matrix kèm ví dụ bị gán sai.</li>
     </ul>
@@ -86,7 +86,7 @@
   <div class="container">
     <div>
       <span class="brand">IndexError<span>;</span></span>
-      <small>Dữ liệu văn bản · Phụ trách: Nguyễn Thị Hồng Hạnh (MSSV 2470316)</small>
+      <small>Dữ liệu văn bản · Nguyễn Thị Hồng Hạnh (MSSV 2470316)</small>
     </div>
     <a class="btn" href="index.html">← Về trang chính</a>
   </div>
