@@ -7,8 +7,8 @@
 <meta name="description" content="Bài tập con 1 của nhóm IndexError: dự đoán khách hàng rời bỏ ngân hàng trên dữ liệu bảng Bank Customer Churn.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Lora:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <a class="skip" href="#main">Bỏ qua điều hướng</a>
@@ -17,9 +17,9 @@
   <div class="container">
     <a class="brand" href="index.html">IndexError<span>;</span></a>
     <nav class="nav" aria-label="Điều hướng chính">
-      <a href="tabular.html" aria-current="page">Bảng</a>
-      <a href="text.html">Văn bản</a>
-      <a href="image.html">Ảnh</a>
+      <a href="tabular.html" aria-current="page">Tabular</a>
+      <a href="text.html">Text</a>
+      <a href="image.html">Image</a>
       <a class="gh" href="https://github.com/kuromine19/IndexError-DataViz" rel="noopener">GitHub</a>
     </nav>
   </div>
@@ -30,7 +30,7 @@
     <div class="hero-grid">
       <div class="hero-main">
         <p class="crumb"><a href="index.html">← Trang chính</a></p>
-        <p class="eyebrow">Bài 1 · dữ liệu bảng · bắt buộc</p>
+        <p class="eyebrow">Bài Tabular (bắt buộc)</p>
         <h1 class="sub">Dự đoán khách hàng rời bỏ ngân hàng</h1>
         <p class="lede">Phân loại nhị phân trên Bank Customer Churn: tìm đặc điểm phân biệt khách hàng rời bỏ, và đo xem xử lý mất cân bằng giúp bắt thêm được bao nhiêu người.</p>
         <div class="actions">
@@ -41,11 +41,11 @@
       <aside class="info" aria-label="Tóm tắt bài">
         <h2 class="info-title">Tóm tắt bài</h2>
         <dl>
-          <dt>Dữ liệu</dt><dd>Bank Customer Churn (Churn_Modelling)</dd>
-          <dt>Quy mô</dt><dd>10.000 dòng × 14 cột</dd>
-          <dt>Nhãn</dt><dd>Exited · 20,4% rời bỏ (3,9 : 1)</dd>
-          <dt>Chia tập</dt><dd>70 / 15 / 15, stratify</dd>
-          <dt>Mô hình cuối</dt><dd>Random Forest · ngưỡng 0,61</dd>
+          <div><dt>Dữ liệu</dt><dd>Bank Customer Churn (Churn_Modelling)</dd></div>
+          <div><dt>Quy mô</dt><dd>10000 dòng × 14 cột</dd></div>
+          <div><dt>Nhãn</dt><dd>Exited, 20,4% rời bỏ (tỉ lệ 3,9 : 1)</dd></div>
+          <div><dt>Chia tập</dt><dd>70 / 15 / 15, stratify</dd></div>
+          <div><dt>Mô hình cuối</dt><dd>Random Forest, ngưỡng 0,61</dd></div>
         </dl>
       </aside>
     </div>
@@ -55,16 +55,17 @@
 <main id="main">
 
   <!-- Kết quả -->
-  <section class="section container" id="ket-qua" aria-labelledby="h-kq">
+  <section class="section band" id="ket-qua" aria-labelledby="h-kq">
+  <div class="container">
     <div class="section-head">
       <div><h2 id="h-kq">Kết quả trên tập Test</h2></div>
       <p>Mô hình, siêu tham số và ngưỡng chốt trên Validation; Test chỉ dùng đúng một lần.</p>
     </div>
     <dl class="kpis">
-      <div class="kpi"><dt>F1 lớp rời bỏ</dt><dd><span class="v">0,639</span><span class="d">Validation 0,646 · baseline 0,493</span></dd></div>
-      <div class="kpi"><dt>Recall · Precision</dt><dd><span class="v">0,60 · 0,68</span><span class="d">bắt 183 / 305 người rời bỏ</span></dd></div>
+      <div class="kpi"><dt>F1 lớp rời bỏ</dt><dd><span class="v">0,639</span><span class="d">Validation 0,646, baseline 0,493</span></dd></div>
+      <div class="kpi"><dt>Recall / Precision</dt><dd><span class="v">0,60 / 0,68</span><span class="d">bắt 183 / 305 người rời bỏ</span></dd></div>
       <div class="kpi"><dt>Bắt thêm so với baseline</dt><dd><span class="v">+70</span><span class="d"><b>+62%</b>, đổi lại thêm 45 lần báo nhầm</span></dd></div>
-      <div class="kpi"><dt>ROC-AUC · Accuracy</dt><dd><span class="v">0,863 · 0,862</span><span class="d">PR-AUC 0,710</span></dd></div>
+      <div class="kpi"><dt>ROC-AUC / Accuracy</dt><dd><span class="v">0,863 / 0,862</span><span class="d">PR-AUC 0,710</span></dd></div>
     </dl>
 
     <h3 class="sub-h">Sản phẩm nộp</h3>
@@ -95,22 +96,24 @@
       <li><a href="#danh-gia">4. Đánh giá &amp; phân tích lỗi</a></li>
       <li><a href="#ket-luan">5. Kết luận</a></li>
     </ul>
+  </div>
   </section>
 
   <!-- 1. EDA -->
-  <section class="section container" id="eda" aria-labelledby="h-eda">
+  <section class="section" id="eda" aria-labelledby="h-eda">
+  <div class="container">
     <div class="section-head">
       <div><h2 id="h-eda">Mô tả dữ liệu &amp; EDA</h2></div>
-      <p>10.000 khách hàng của một ngân hàng ở Pháp, Đức và Tây Ban Nha. Sau khi bỏ 3 cột định danh còn 10 feature.</p>
+      <p>10000 khách hàng của một ngân hàng ở Pháp, Đức và Tây Ban Nha. Sau khi bỏ 3 cột định danh còn 10 feature.</p>
     </div>
 
     <div class="table-wrap">
       <table class="kv">
-        <tr><th>Feature</th><td>6 numerical (CreditScore, Age, Tenure, Balance, NumOfProducts, EstimatedSalary) · 2 binary (HasCrCard, IsActiveMember) · 2 categorical (Geography, Gender)</td></tr>
-        <tr><th>Missing values</th><td>1.521 ô thiếu ở 5 cột (2,1–3,9% mỗi cột), 14,1% số dòng có ít nhất một ô thiếu. Nhóm tự tạo theo cơ chế MCAR với seed cố định vì dữ liệu gốc không thiếu.</td></tr>
-        <tr><th>Trùng lặp</th><td>0 dòng trùng · 0 CustomerId trùng</td></tr>
-        <tr><th>Mất cân bằng</th><td>7.963 ở lại (79,6%) · 2.037 rời bỏ (20,4%). Chỉ cần luôn đoán “ở lại” đã đạt Accuracy 79,6%</td></tr>
-        <tr><th>Outlier (IQR)</th><td>Age 348 giá trị (3,6%) · NumOfProducts 60 (0,6%) · CreditScore 15 (0,15%). Nhóm giữ lại và dùng RobustScaler</td></tr>
+        <tr><th>Feature</th><td>6 numerical (CreditScore, Age, Tenure, Balance, NumOfProducts, EstimatedSalary), 2 binary (HasCrCard, IsActiveMember) và 2 categorical (Geography, Gender)</td></tr>
+        <tr><th>Missing values</th><td>1521 ô thiếu ở 5 cột (2,1–3,9% mỗi cột), 14,1% số dòng có ít nhất một ô thiếu. Nhóm tự tạo theo cơ chế MCAR với seed cố định vì dữ liệu gốc không thiếu.</td></tr>
+        <tr><th>Trùng lặp</th><td>Không có dòng trùng và không có CustomerId trùng</td></tr>
+        <tr><th>Mất cân bằng</th><td>7963 ở lại (79,6%) và 2037 rời bỏ (20,4%). Chỉ cần luôn đoán “ở lại” đã đạt Accuracy 79,6%</td></tr>
+        <tr><th>Outlier (IQR)</th><td>Age có 348 giá trị (3,6%), NumOfProducts 60 (0,6%) và CreditScore 15 (0,15%). Nhóm giữ lại và dùng RobustScaler</td></tr>
       </table>
     </div>
 
@@ -148,9 +151,9 @@
       <table class="data">
         <thead><tr><th scope="col">Nhóm tuổi</th><th scope="col">Số KH</th><th scope="col">% rời bỏ</th></tr></thead>
         <tbody>
-          <tr><th scope="row">18–30</th><td class="num">1.878</td><td class="num">7,5%</td></tr>
-          <tr><th scope="row">31–40</th><td class="num">4.305</td><td class="num">12,2%</td></tr>
-          <tr><th scope="row">41–50</th><td class="num">2.229</td><td class="num">33,9%</td></tr>
+          <tr><th scope="row">18–30</th><td class="num">1878</td><td class="num">7,5%</td></tr>
+          <tr><th scope="row">31–40</th><td class="num">4305</td><td class="num">12,2%</td></tr>
+          <tr><th scope="row">41–50</th><td class="num">2229</td><td class="num">33,9%</td></tr>
           <tr class="hl"><th scope="row">51–62</th><td class="num">868</td><td class="num best">54,7%</td></tr>
           <tr><th scope="row">63–70</th><td class="num">222</td><td class="num">27,0%</td></tr>
           <tr><th scope="row">&gt; 70</th><td class="num">126</td><td class="num">8,7%</td></tr>
@@ -158,10 +161,12 @@
         <caption>Tỉ lệ rời bỏ tăng dần tới khoảng 60 tuổi rồi giảm lại. Nếu cắt bỏ outlier của Age thì mô hình sẽ mất đoạn giảm này.</caption>
       </table>
     </div>
+  </div>
   </section>
 
   <!-- 2. Chuẩn bị -->
-  <section class="section container" id="chuan-bi" aria-labelledby="h-cb">
+  <section class="section band" id="chuan-bi" aria-labelledby="h-cb">
+  <div class="container">
     <div class="section-head">
       <div><h2 id="h-cb">Chuẩn bị dữ liệu</h2></div>
       <p>Mọi bước học tham số đều nằm trong <code>Pipeline</code> và chỉ <code>fit</code> trên Train để không rò rỉ dữ liệu.</p>
@@ -175,7 +180,7 @@
           <tr><th scope="row">Binary: HasCrCard, IsActiveMember, IsZeroBalance</th><td>mode</td><td>giữ 0/1</td><td>—</td></tr>
           <tr><th scope="row">Categorical: Geography, Gender, ProductsGroup</th><td>mode</td><td>—</td><td>One-Hot</td></tr>
         </tbody>
-        <caption>10 cột gốc → 16 cột số, không còn ô thiếu. Train / Validation / Test = 7.000 / 1.500 / 1.500, tỉ lệ rời bỏ 20,4% / 20,4% / 20,3%.</caption>
+        <caption>10 cột gốc → 16 cột số, không còn ô thiếu. Train / Validation / Test = 7000 / 1500 / 1500, tỉ lệ rời bỏ 20,4% / 20,4% / 20,3%.</caption>
       </table>
     </div>
 
@@ -190,10 +195,12 @@
         <figcaption>Age và Balance trước và sau khi scale. RobustScaler giữ phần lớn dữ liệu quanh 0, còn StandardScaler bị các giá trị Age lớn kéo dài đuôi bên phải, nên nhóm chọn RobustScaler.</figcaption>
       </figure>
     </div>
+  </div>
   </section>
 
   <!-- 3. Mô hình -->
-  <section class="section container" id="mo-hinh" aria-labelledby="h-mh">
+  <section class="section" id="mo-hinh" aria-labelledby="h-mh">
+  <div class="container">
     <div class="section-head">
       <div><h2 id="h-mh">Phân tích &amp; mô hình hoá</h2></div>
       <p>Hai baseline và ba thuật toán, mỗi thuật toán chạy có và không có <code>class_weight='balanced'</code>. Thước đo chính: F1 lớp rời bỏ.</p>
@@ -230,10 +237,12 @@
       <strong>GridSearchCV 5-fold</strong> trên Random Forest và HistGradientBoosting với <code>class_weight</code> nằm trong lưới: cả hai đều tự chọn <code>balanced</code>.
       Sau tinh chỉnh F1 Validation là 0,634 so với 0,630, chênh lệch nằm trong sai số. Nhóm chọn Random Forest vì permutation importance dễ diễn giải theo cột gốc.
     </div>
+  </div>
   </section>
 
   <!-- 4. Đánh giá -->
-  <section class="section container" id="danh-gia" aria-labelledby="h-dg">
+  <section class="section band" id="danh-gia" aria-labelledby="h-dg">
+  <div class="container">
     <div class="section-head">
       <div><h2 id="h-dg">Đánh giá &amp; phân tích lỗi</h2></div>
       <p>Bốn cấu hình trên cùng tập Test, mỗi lần chỉ thay đổi một thứ để thấy đóng góp của từng kỹ thuật.</p>
@@ -293,10 +302,12 @@
         <caption>Pipeline nhận dữ liệu thô, kể cả khi thiếu trường, rồi tự tạo đặc trưng, điền thiếu, scale, encode và áp ngưỡng.</caption>
       </table>
     </div>
+  </div>
   </section>
 
   <!-- 5. Kết luận -->
-  <section class="section container" id="ket-luan" aria-labelledby="h-kl">
+  <section class="section" id="ket-luan" aria-labelledby="h-kl">
+  <div class="container">
     <div class="section-head">
       <div><h2 id="h-kl">Kết luận, hạn chế &amp; hướng phát triển</h2></div>
     </div>
@@ -305,15 +316,13 @@
       <p><strong>Hạn chế.</strong> Missing values do nhóm tự tạo theo MCAR, dễ hơn dữ liệu thiếu ngoài đời (MAR/MNAR). EDA làm trên toàn bộ dữ liệu trước khi chia tập nên các quyết định tạo đặc trưng có tham khảo gián tiếp tập Test. Dữ liệu là ảnh chụp một thời điểm, không có lịch sử hành vi. Ngưỡng chọn theo F1 ngầm coi chi phí bỏ sót và báo nhầm bằng nhau.</p>
       <p><strong>Hướng phát triển.</strong> Chọn ngưỡng theo chi phí kinh doanh thật; thử SMOTE để so với class weight; hiệu chỉnh xác suất để dùng như điểm rủi ro; bổ sung lịch sử giao dịch để bắt được nhóm khách hàng trẻ; dùng SHAP để giải thích từng dự đoán cho nhân viên chăm sóc khách hàng.</p>
     </div>
+  </div>
   </section>
 </main>
 
 <footer class="footer">
   <div class="container">
-    <div>
-      <span class="brand">IndexError<span>;</span></span>
-      <small>Bài 1 · Dữ liệu bảng · Phụ trách: Nguyễn Thành Đạt (MSSV 2670264)</small>
-    </div>
+    <span class="foot-meta"><span class="brand">IndexError;</span><span>Bài Tabular, phụ trách: Nguyễn Thành Đạt (MSSV 2670264)</span></span>
     <a class="btn" href="index.html">← Về trang chính</a>
   </div>
 </footer>

@@ -7,8 +7,8 @@
 <meta name="description" content="Bài tập lớn môn Nền tảng lập trình cho phân tích và trực quan dữ liệu của nhóm IndexError, Trường Đại học Bách Khoa – ĐHQG-HCM.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Lora:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <a class="skip" href="#main">Bỏ qua điều hướng</a>
@@ -19,151 +19,177 @@
     <nav class="nav" aria-label="Điều hướng chính">
       <a href="#bai-tap">Bài tập</a>
       <a href="#ket-qua">Kết quả</a>
+      <a href="#quy-trinh">Quy trình</a>
       <a href="#nhom">Nhóm</a>
+      <a href="#cong-cu">Công cụ</a>
       <a class="gh" href="https://github.com/kuromine19/IndexError-DataViz" rel="noopener">GitHub</a>
     </nav>
   </div>
 </header>
 
 <section class="hero" id="top">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-main">
-        <p class="eyebrow">Bài tập lớn của nhóm IndexError</p>
-        <h1>Nền tảng lập trình cho phân tích và trực quan dữ liệu</h1>
-        <p class="lede">Nhóm làm ba bài trên ba loại dữ liệu: bảng, văn bản và ảnh. Mỗi bài đi qua các bước thu thập, tiền xử lý, EDA, trực quan hoá và huấn luyện mô hình học máy.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#bai-tap">Xem các bài tập</a>
-          <a class="btn btn-ghost" href="https://github.com/kuromine19/IndexError-DataViz" rel="noopener">Mã nguồn trên GitHub</a>
-        </div>
+  <div class="container hero-grid">
+    <div class="hero-main">
+      <p class="eyebrow">Bài tập lớn của nhóm IndexError</p>
+      <h1>Nền tảng lập trình cho phân tích và trực quan dữ liệu</h1>
+      <p class="lede">Ba bài tập con trên dữ liệu dạng bảng, văn bản và hình ảnh, đi qua đủ các bước: thu thập, tiền xử lý, EDA, trực quan hoá và học máy.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#bai-tap">Xem các bài tập</a>
+        <a class="btn btn-ghost" href="https://github.com/kuromine19/IndexError-DataViz" rel="noopener">Mã nguồn</a>
       </div>
+    </div>
 
-      <aside class="info" aria-labelledby="h-info">
-        <h2 class="info-title" id="h-info">Thông tin môn học</h2>
-        <dl>
-          <dt>Trường</dt><dd>Trường Đại học Bách Khoa – ĐHQG-HCM</dd>
-          <dt>Khoa</dt><dd>Khoa học và Kỹ thuật Máy tính</dd>
-          <dt>Học kỳ</dt><dd>261, năm học 2026–2027</dd>
-          <dt>Giảng viên</dt><dd>Lê Thành Sách</dd>
-        </dl>
-      </aside>
+    <div class="info">
+      <dl>
+        <div><dt>Trường</dt><dd>Đại học Bách Khoa – ĐHQG-HCM</dd></div>
+        <div><dt>Khoa</dt><dd>Khoa học và Kỹ thuật Máy tính</dd></div>
+        <div class="pair">
+          <div><dt>Học kỳ</dt><dd>261</dd></div>
+          <div><dt>Năm học</dt><dd>2026–2027</dd></div>
+        </div>
+        <div><dt>Giảng viên hướng dẫn</dt><dd>Lê Thành Sách</dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
 <main id="main">
-  <section class="section container" id="bai-tap" aria-labelledby="h-bai-tap">
-    <div class="section-head">
-      <h2 id="h-bai-tap">Các bài tập</h2>
-      <p>Bài dữ liệu bảng và văn bản là bắt buộc, bài dữ liệu ảnh là bài tự chọn.</p>
-    </div>
+  <section class="section band" id="bai-tap" aria-labelledby="h-bai-tap">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="h-bai-tap">Các bài tập</h2>
+        <p>Hai bài bắt buộc và một bài tự chọn, mỗi bài một loại dữ liệu.</p>
+      </div>
 
-    <div class="grid">
-      <article class="card">
-        <span class="kicker">Bài 1 · bắt buộc</span>
-        <h3>Dữ liệu bảng</h3>
-        <dl class="minis">
-          <div><dt>Số mẫu</dt><dd>10.000</dd></div>
-          <div><dt>Số cột</dt><dd>14</dd></div>
-        </dl>
-        <p>Dự đoán khách hàng rời bỏ ngân hàng trên bộ Bank Customer Churn. Dữ liệu có giá trị thiếu, có cả cột phân loại và cột số.</p>
-        <div class="card-foot">
-          <span>Thành Đạt · <span class="status done">đã xong</span></span>
-          <a class="go" href="tabular.html">Xem bài →</a>
-        </div>
-      </article>
+      <div class="grid">
+        <article class="card">
+          <div class="card-top"><h3>Tabular</h3><span class="kicker">Bắt buộc</span></div>
+          <p>Dự đoán khách hàng rời bỏ ngân hàng. Dữ liệu dạng bảng có giá trị thiếu, kết hợp cột phân loại và cột số.</p>
+          <ul class="rows">
+            <li><span>Số mẫu</span><span>10000</span></li>
+            <li><span>Số cột</span><span>14</span></li>
+            <li><span>Trạng thái</span><span class="done">Đã xong</span></li>
+          </ul>
+          <div class="card-foot">
+            <span>Thành Đạt phụ trách</span>
+            <a class="go" href="tabular.html">Xem bài →</a>
+          </div>
+        </article>
 
-      <article class="card">
-        <span class="kicker">Bài 2 · bắt buộc</span>
-        <h3>Dữ liệu văn bản</h3>
-        <dl class="minis">
-          <div><dt>Số mẫu</dt><dd>≥ 2.000</dd></div>
-          <div><dt>Ngôn ngữ</dt><dd>Tiếng Anh</dd></div>
-        </dl>
-        <p>Phân loại văn bản tiếng Anh, so sánh biểu diễn TF-IDF với embedding.</p>
-        <div class="card-foot">
-          <span>Hồng Hạnh · <span class="status">đang làm</span></span>
-          <a class="go" href="text.html">Xem bài →</a>
-        </div>
-      </article>
+        <article class="card">
+          <div class="card-top"><h3>Text</h3><span class="kicker">Bắt buộc</span></div>
+          <p>Phân loại văn bản tiếng Anh, so sánh biểu diễn TF-IDF với embedding.</p>
+          <ul class="rows">
+            <li><span>Số mẫu</span><span>≥ 2000</span></li>
+            <li><span>Ngôn ngữ</span><span>Tiếng Anh</span></li>
+            <li><span>Trạng thái</span><span>Đang làm</span></li>
+          </ul>
+          <div class="card-foot">
+            <span>Hồng Hạnh phụ trách</span>
+            <a class="go" href="text.html">Xem bài →</a>
+          </div>
+        </article>
 
-      <article class="card">
-        <span class="kicker">Bài 3 · tự chọn</span>
-        <h3>Dữ liệu ảnh</h3>
-        <dl class="minis">
-          <div><dt>Số ảnh</dt><dd>≥ 5.000</dd></div>
-          <div><dt>Số lớp</dt><dd>≥ 3</dd></div>
-        </dl>
-        <p>Phân loại ảnh có cạnh ngắn từ 128 px trở lên, dùng mô hình pretrained.</p>
-        <div class="card-foot">
-          <span>Hoàng Khang · <span class="status">đang làm</span></span>
-          <a class="go" href="image.html">Xem bài →</a>
-        </div>
-      </article>
+        <article class="card">
+          <div class="card-top"><h3>Image</h3><span class="kicker warm">Tự chọn</span></div>
+          <p>Phân loại ảnh với mô hình pretrained, cạnh ngắn nhất từ 128 px.</p>
+          <ul class="rows">
+            <li><span>Số ảnh</span><span>≥ 5000</span></li>
+            <li><span>Số lớp</span><span>≥ 3</span></li>
+            <li><span>Trạng thái</span><span>Đang làm</span></li>
+          </ul>
+          <div class="card-foot">
+            <span>Hoàng Khang phụ trách</span>
+            <a class="go" href="image.html">Xem bài →</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="section container" id="ket-qua" aria-labelledby="h-ket-qua">
-    <div class="section-head">
-      <h2 id="h-ket-qua">Kết quả bài 1</h2>
-      <p>Mô hình cuối là Random Forest với <code>class_weight='balanced'</code>, ngưỡng 0,61 chọn trên tập Validation. Các số dưới đây đo trên tập Test gồm 1.500 khách hàng, trong đó có 305 người thực sự rời bỏ.</p>
+  <section class="section" id="ket-qua" aria-labelledby="h-ket-qua">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="h-ket-qua">Kết quả bài Tabular</h2>
+        <p>Mô hình cuối là Random Forest với <code>class_weight='balanced'</code>, ngưỡng 0,61 chọn trên tập Validation. Các số dưới đây đo trên tập Test gồm 1500 khách hàng, trong đó có 305 người thực sự rời bỏ.</p>
+      </div>
+
+      <dl class="kpis">
+        <div class="kpi"><dt>F1 lớp rời bỏ</dt><dd><span class="v">0,639</span><span class="d">baseline 0,493</span></dd></div>
+        <div class="kpi"><dt>Bắt được khách rời bỏ</dt><dd><span class="v">183 / 305</span><span class="d">baseline bắt được 113</span></dd></div>
+        <div class="kpi"><dt>Precision / Recall</dt><dd><span class="v">0,68 / 0,60</span><span class="d">báo nhầm 85 trường hợp</span></dd></div>
+        <div class="kpi"><dt>ROC-AUC</dt><dd><span class="v">0,863</span><span class="d">Accuracy 0,862</span></dd></div>
+      </dl>
+
+      <figure class="fig" style="margin-top:24px">
+        <a class="plate wide" href="assets/tabular/improvement-steps.png"><img src="assets/tabular/improvement-steps.png" width="1284" height="483" loading="lazy" alt="Biểu đồ cột Precision, Recall và F1 của lớp rời bỏ trên tập Test qua bốn bước: baseline Logistic Regression, Random Forest, thêm class_weight, thêm ngưỡng 0,61."></a>
+        <figcaption>Precision, Recall và F1 qua từng bước cải tiến. Thêm class_weight giúp Recall tăng từ 0,43 lên 0,71, sau đó dời ngưỡng lên 0,61 kéo Precision trở lại 0,68. So với baseline, mô hình cuối bắt thêm được 70 khách hàng rời bỏ.</figcaption>
+      </figure>
+      <p style="margin:20px 0 0"><a class="go" href="tabular.html">Xem toàn bộ phân tích của bài Tabular →</a></p>
     </div>
-
-    <dl class="kpis">
-      <div class="kpi"><dt>F1 lớp rời bỏ</dt><dd><span class="v">0,639</span><span class="d">baseline 0,493</span></dd></div>
-      <div class="kpi"><dt>Bắt được khách rời bỏ</dt><dd><span class="v">183 / 305</span><span class="d">baseline bắt được 113</span></dd></div>
-      <div class="kpi"><dt>Precision / Recall</dt><dd><span class="v">0,68 / 0,60</span><span class="d">báo nhầm 85 trường hợp</span></dd></div>
-      <div class="kpi"><dt>ROC-AUC</dt><dd><span class="v">0,863</span><span class="d">Accuracy 0,862</span></dd></div>
-    </dl>
-
-    <figure class="fig" style="margin-top:20px">
-      <a class="plate wide" href="assets/tabular/improvement-steps.png"><img src="assets/tabular/improvement-steps.png" width="1284" height="483" loading="lazy" alt="Biểu đồ cột Precision, Recall và F1 của lớp rời bỏ trên tập Test qua bốn bước: baseline Logistic Regression, Random Forest, thêm class_weight, thêm ngưỡng 0,61."></a>
-      <figcaption>Precision, Recall và F1 qua từng bước cải tiến. Thêm class_weight giúp Recall tăng từ 0,43 lên 0,71, sau đó dời ngưỡng lên 0,61 kéo Precision trở lại 0,68. So với baseline, mô hình cuối bắt thêm được 70 khách hàng rời bỏ.</figcaption>
-    </figure>
-    <p style="margin-top:16px"><a href="tabular.html">Xem toàn bộ phân tích của bài 1 →</a></p>
   </section>
 
-  <section class="section container" aria-labelledby="h-quy-trinh">
-    <div class="section-head">
-      <h2 id="h-quy-trinh">Cách nhóm làm mỗi bài</h2>
+  <section class="section band" id="quy-trinh" aria-labelledby="h-quy-trinh">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="h-quy-trinh">Quy trình chung</h2>
+        <p>Cả ba bài đều làm theo bốn bước này.</p>
+      </div>
+      <ol class="steps">
+        <li><span class="n">1</span><h3>Mô tả dữ liệu</h3><p>Giới thiệu bộ dữ liệu bằng Markdown và các biểu đồ phân phối.</p></li>
+        <li><span class="n">2</span><h3>Chuẩn bị dữ liệu</h3><p>Xử lý giá trị thiếu, ngoại lai, mã hoá, chuẩn hoá; chia train / validation / test không rò rỉ.</p></li>
+        <li><span class="n">3</span><h3>Phân tích và mô hình hoá</h3><p>Dùng Scikit-learn, so sánh mô hình và tham số trên cùng một tập test.</p></li>
+        <li><span class="n">4</span><h3>Tổng kết và mở rộng</h3><p>Độ chính xác, ma trận nhầm lẫn, hạn chế và hướng phát triển.</p></li>
+      </ol>
     </div>
-    <ol class="steps">
-      <li><span class="n">Bước 1</span><h3>Mô tả dữ liệu</h3><p>Giới thiệu bộ dữ liệu bằng Markdown và vẽ biểu đồ phân phối các thuộc tính.</p></li>
-      <li><span class="n">Bước 2</span><h3>Chuẩn bị dữ liệu</h3><p>Xử lý giá trị thiếu và ngoại lai, mã hoá, chuẩn hoá, rồi chia train / validation / test sao cho không rò rỉ dữ liệu.</p></li>
-      <li><span class="n">Bước 3</span><h3>Mô hình hoá</h3><p>Huấn luyện bằng Scikit-learn, so sánh nhiều mô hình và bộ tham số trên cùng một tập test.</p></li>
-      <li><span class="n">Bước 4</span><h3>Tổng kết</h3><p>Đánh giá bằng các thước đo và ma trận nhầm lẫn, nêu hạn chế và hướng phát triển.</p></li>
-    </ol>
   </section>
 
-  <section class="section container" id="nhom" aria-labelledby="h-nhom">
-    <div class="section-head">
-      <h2 id="h-nhom">Thành viên nhóm</h2>
+  <section class="section" id="nhom" aria-labelledby="h-nhom">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="h-nhom">Thành viên</h2>
+        <p>Mỗi bạn phụ trách một bài tập.</p>
+      </div>
+      <ul class="people">
+        <li>
+          <span class="name">Nguyễn Thành Đạt</span>
+          <span class="role">Tabular: tiền xử lý, EDA và mô hình hoá</span>
+          <span class="id">2670264</span>
+          <a class="link" href="https://github.com/kuromine19" rel="noopener">GitHub</a>
+        </li>
+        <li>
+          <span class="name">Nguyễn Thị Hồng Hạnh</span>
+          <span class="role">Text: văn bản tiếng Anh, vector hoá và mô hình hoá</span>
+          <span class="id">2470316</span>
+          <span class="link">chưa có GitHub</span>
+        </li>
+        <li>
+          <span class="name">Nguyễn Văn Hoàng Khang</span>
+          <span class="role">Image: augmentation và transfer learning</span>
+          <span class="id">2570754</span>
+          <span class="link">chưa có GitHub</span>
+        </li>
+      </ul>
     </div>
-    <div class="table-wrap">
-      <table class="data wrap team">
-        <thead><tr><th scope="col">Họ tên</th><th scope="col">MSSV</th><th scope="col">Phụ trách</th><th scope="col">GitHub</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Nguyễn Thành Đạt</th><td>2670264</td><td>Bài 1, dữ liệu bảng</td><td><a href="https://github.com/kuromine19" rel="noopener">kuromine19</a></td></tr>
-          <tr><th scope="row">Nguyễn Thị Hồng Hạnh</th><td>2470316</td><td>Bài 2, văn bản tiếng Anh</td><td>chưa cập nhật</td></tr>
-          <tr><th scope="row">Nguyễn Văn Hoàng Khang</th><td>2570754</td><td>Bài 3, dữ liệu ảnh</td><td>chưa cập nhật</td></tr>
-        </tbody>
-      </table>
-    </div>
+  </section>
 
-    <h3 class="sub-h">Công cụ</h3>
-    <ul class="stack">
-      <li>Python 3</li><li>NumPy</li><li>pandas</li><li>Matplotlib</li><li>Seaborn</li>
-      <li>Plotly</li><li>Scikit-learn</li><li>OpenCV</li><li>Google Colab</li><li>Git</li>
-    </ul>
+  <section class="section band" id="cong-cu" aria-labelledby="h-cong-cu">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="h-cong-cu">Công cụ</h2>
+        <p>Hệ sinh thái Python cho dữ liệu, chạy trên Google Colab.</p>
+      </div>
+      <ul class="stack">
+        <li>Python 3</li><li>NumPy</li><li>pandas</li><li>Matplotlib</li><li>Seaborn</li>
+        <li>Plotly</li><li>Scikit-learn</li><li>OpenCV</li><li>Google Colab</li><li>Git</li>
+      </ul>
+    </div>
   </section>
 </main>
 
 <footer class="footer">
   <div class="container">
-    <div>
-      <span class="brand">IndexError<span>;</span></span>
-      <small>Học kỳ 261, năm học 2026–2027 · Trường Đại học Bách Khoa – ĐHQG-HCM</small>
-    </div>
+    <span class="foot-meta"><span class="brand">IndexError;</span><span>Học kỳ 261, năm học 2026–2027</span></span>
     <a class="btn" href="https://github.com/kuromine19/IndexError-DataViz" rel="noopener">Repository trên GitHub</a>
   </div>
 </footer>
