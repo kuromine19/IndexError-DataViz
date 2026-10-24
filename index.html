@@ -4,211 +4,237 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>IndexError; — Nền tảng lập trình cho phân tích và trực quan dữ liệu</title>
-<meta name="description" content="Bài tập lớn môn Nền tảng lập trình cho phân tích và trực quan dữ liệu, Đại học Bách Khoa – ĐHQG-HCM.">
+<meta name="description" content="Bài tập lớn môn Nền tảng lập trình cho phân tích và trực quan dữ liệu của nhóm IndexError, Trường Đại học Bách Khoa – ĐHQG-HCM.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="wrap">
+<a class="skip" href="#main">Bỏ qua điều hướng</a>
 
-  <header class="hero">
-    <p class="crumb">Bài tập lớn · Nhóm IndexError</p>
-    <h1>Nền tảng lập trình cho phân tích và trực quan dữ liệu</h1>
-    <p class="lede">
-      Ba bài tập lớn con trên ba loại dữ liệu khác nhau - bảng, văn bản và ảnh -
-      đi hết quy trình từ thu thập, tiền xử lý, EDA, trực quan hóa đến huấn luyện
-      mô hình học máy.
-    </p>
+<header class="topbar">
+  <div class="container">
+    <a class="brand" href="index.html">IndexError<span>;</span></a>
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a href="#bai-tap">Bài tập</a>
+      <a href="#ket-qua">Kết quả</a>
+      <a href="#quy-trinh">Quy trình</a>
+      <a href="#nhom">Nhóm</a>
+      <a href="#cong-cu">Công cụ</a>
+      <a class="gh" href="https://github.com/kuromine19/IndexError-DataViz" rel="noopener">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        GitHub
+      </a>
+    </nav>
+  </div>
+</header>
 
-    <dl class="facts">
-      <div><dt>Trường</dt><dd>Đại học Bách Khoa – ĐHQG-HCM</dd></div>
-      <div><dt>Khoa</dt><dd>Khoa học và Kỹ thuật Máy tính</dd></div>
-      <div><dt>Học kỳ</dt><dd>261 · Năm học 2026–2027</dd></div>
-      <div><dt>Giảng viên</dt><dd>Lê Thành Sách</dd></div>
-    </dl>
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-main">
+        <p class="eyebrow">Bài tập lớn · Nhóm IndexError</p>
+        <h1>Nền tảng lập trình cho phân tích và trực quan dữ liệu</h1>
+        <p class="lede">Ba bài tập con trên dữ liệu dạng bảng, văn bản và hình ảnh — đi trọn quy trình từ thu thập, tiền xử lý, EDA, trực quan hoá đến học máy.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#bai-tap">Xem 3 bài tập
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/kuromine19/IndexError-DataViz" rel="noopener">Mã nguồn trên GitHub</a>
+        </div>
+      </div>
 
-    <div class="plot">
-      <svg id="grid" role="img" aria-label="Ma trận nhiệt minh họa một mảng dữ liệu hai chiều"></svg>
+      <aside class="info" aria-label="Thông tin môn học">
+        <div class="info-head"><span>&gt;&gt;&gt; course.info()</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <dl>
+          <dt>Trường</dt><dd>Trường Đại học Bách Khoa – ĐHQG-HCM</dd>
+          <dt>Khoa</dt><dd>Khoa học và Kỹ thuật Máy tính</dd>
+          <dt>Học kỳ</dt><dd>261</dd>
+          <dt>Năm học</dt><dd>2026–2027</dd>
+          <dt>GVHD</dt><dd>Lê Thành Sách</dd>
+        </dl>
+      </aside>
     </div>
-  </header>
 
-  <section>
-    <h2>Các bài tập lớn con</h2>
-    <ul class="parts">
-      <li>
-        <a href="tabular.html">
-          <span class="bar" style="background:var(--v1)"></span>
-          <span class="kind">Bắt buộc · Tabular</span>
-          <h3>Dữ liệu bảng</h3>
-          <p>Tối thiểu 2000 mẫu và 10 cột, có missing values, cột categorical và numerical.</p>
-          <span class="go">Xem bài</span>
-        </a>
-      </li>
-      <li>
-        <a href="text.html">
-          <span class="bar" style="background:var(--v3)"></span>
-          <span class="kind">Bắt buộc · Text</span>
-          <h3>Dữ liệu văn bản</h3>
-          <p>Tối thiểu 2000 mẫu tiếng Việt, nhóm tự thu thập bằng crawling.</p>
-          <span class="go">Xem bài</span>
-        </a>
-      </li>
-      <li>
-        <a href="image.html">
-          <span class="bar" style="background:var(--v4)"></span>
-          <span class="kind">Tự chọn · Image</span>
-          <h3>Dữ liệu ảnh</h3>
-          <p>Tối thiểu 5000 ảnh, ít nhất 3 lớp, cạnh ngắn ≥ 128 px, dùng mô hình pretrained.</p>
-          <span class="go">Xem bài</span>
-        </a>
-      </li>
-    </ul>
+    <ol class="pipeline" aria-label="Quy trình dữ liệu">
+      <li>Thu thập</li><li class="arrow" aria-hidden="true">→</li>
+      <li>Tiền xử lý</li><li class="arrow" aria-hidden="true">→</li>
+      <li>EDA</li><li class="arrow" aria-hidden="true">→</li>
+      <li>Trực quan hoá</li><li class="arrow" aria-hidden="true">→</li>
+      <li class="end">Machine learning</li>
+    </ol>
+  </div>
+</section>
+
+<main id="main">
+  <!-- 01 · Bài tập -->
+  <section class="section container" id="bai-tap" aria-labelledby="h-bai-tap">
+    <div class="section-head">
+      <div><span class="num">§ 01</span><h2 id="h-bai-tap">Ba bài tập con</h2></div>
+      <p>Hai bài bắt buộc trên dữ liệu bảng và văn bản, một bài tự chọn trên dữ liệu ảnh.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-top">
+          <span class="icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M3 15h18"/><path d="M9 4v16"/></svg></span>
+          <span class="tag good">Đã có kết quả</span>
+        </div>
+        <div><span class="kicker">01 / tabular · bắt buộc</span><h3>Dữ liệu dạng bảng</h3></div>
+        <dl class="minis">
+          <div><dt>Số mẫu</dt><dd>10.000</dd></div>
+          <div><dt>Số cột</dt><dd>14</dd></div>
+        </dl>
+        <p>Dự đoán khách hàng rời bỏ ngân hàng (Bank Customer Churn): có giá trị thiếu, cột phân loại và cột số.</p>
+        <div class="card-foot">
+          <span>Phụ trách: <strong>Thành Đạt</strong></span>
+          <a class="go" href="tabular.html">Xem bài <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 11h16"/><path d="M4 16h10"/><path d="M4 21h6"/></svg></span>
+          <span class="tag muted">Đang thực hiện</span>
+        </div>
+        <div><span class="kicker">02 / text · bắt buộc</span><h3>Dữ liệu văn bản</h3></div>
+        <dl class="minis">
+          <div><dt>Số mẫu</dt><dd>≥ 2.000</dd></div>
+          <div><dt>Ngôn ngữ</dt><dd>vi</dd></div>
+        </dl>
+        <p>Mẫu tiếng Việt do nhóm tự thu thập bằng crawl.</p>
+        <div class="card-foot">
+          <span>Phụ trách: <strong>Hoàng Khang</strong></span>
+          <a class="go" href="text.html">Xem bài <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="card dashed">
+        <div class="card-top">
+          <span class="icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 17-5-5-9 8"/></svg></span>
+          <span class="tag warm">Tự chọn · đang thực hiện</span>
+        </div>
+        <div><span class="kicker">03 / image</span><h3>Dữ liệu hình ảnh</h3></div>
+        <dl class="minis">
+          <div><dt>Số ảnh</dt><dd>≥ 5.000</dd></div>
+          <div><dt>Số lớp</dt><dd>≥ 3</dd></div>
+        </dl>
+        <p>Cạnh ngắn nhất ≥ 128 px, sử dụng mô hình pretrained.</p>
+        <div class="card-foot">
+          <span>Phụ trách: <strong>Hồng Hạnh</strong></span>
+          <a class="go" href="image.html">Xem bài <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
   </section>
 
-  <section>
-    <h2>Thành viên nhóm</h2>
-    <div class="team">
-      <div class="member">
-        <span class="bar" style="background:var(--v1)"></span>
-        <span class="name">Nguyễn Thành Đạt</span>
-        <span class="id">MSSV 2670264</span>
-        <span class="role">Tabular — tiền xử lý, EDA, mô hình</span>
-        <span class="gh"><a href="https://github.com/kuromine19" rel="noopener">https://github.com/kuromine19</a></span>
+  <!-- 02 · Kết quả nổi bật (từ notebook) -->
+  <section class="section container" id="ket-qua" aria-labelledby="h-ket-qua">
+    <div class="section-head">
+      <div><span class="num">§ 02</span><h2 id="h-ket-qua">Kết quả nổi bật</h2></div>
+      <p>Số liệu và hình lấy trực tiếp từ output của notebook, đánh giá một lần trên tập Test độc lập.</p>
+    </div>
+
+    <div class="spotlight">
+      <div class="spot-head">
+        <div>
+          <span class="tag">Bài 1 · Tabular</span>
+          <h3 style="margin-top:12px">Dự đoán khách hàng rời bỏ ngân hàng</h3>
+          <p>Random Forest với <code>class_weight='balanced'</code> và ngưỡng 0,61 chọn trên Validation. Tập Test có 1.500 khách hàng, trong đó 305 người thực sự rời bỏ.</p>
+        </div>
+        <a class="btn btn-ghost" href="tabular.html">Xem toàn bộ kết quả <span aria-hidden="true">→</span></a>
       </div>
-      <div class="member">
-        <span class="bar" style="background:var(--v3)"></span>
-        <span class="name">Nguyễn Văn Hoàng Khang</span>
-        <span class="id">MSSV 2570754</span>
-        <span class="role">Text — thu thập, vector hóa, mô hình</span>
-        <span class="gh"><a href="https://github.com/" rel="noopener">github.com/…</a></span>
-      </div>
-      <div class="member">
-        <span class="bar" style="background:var(--v4)"></span>
-        <span class="name">Nguyễn Thị Hồng Hạnh</span>
-        <span class="id">MSSV 2470316</span>
-        <span class="role">Image — augmentation, transfer learning</span>
-        <span class="gh"><a href="https://github.com/" rel="noopener">github.com/…</a></span>
-      </div>
+
+      <dl class="kpis">
+        <div class="kpi"><dt>F1 lớp rời bỏ (Test)</dt><dd><span class="v">0,639</span><span class="d">baseline 0,493 · <b>+0,146</b></span></dd></div>
+        <div class="kpi"><dt>Khách hàng rời bỏ bắt được</dt><dd><span class="v">183 / 305</span><span class="d">baseline 113 · <b>+70 người (+62%)</b></span></dd></div>
+        <div class="kpi"><dt>Precision · Recall</dt><dd><span class="v">0,68 · 0,60</span><span class="d">85 lần báo nhầm trên 1.500 KH</span></dd></div>
+        <div class="kpi"><dt>ROC-AUC · Accuracy</dt><dd><span class="v">0,863 · 0,862</span><span class="d">mô hình luôn đoán “ở lại”: Acc 0,796</span></dd></div>
+      </dl>
+
+      <figure class="fig">
+        <a class="plate wide" href="assets/tabular/improvement-steps.png"><img src="assets/tabular/improvement-steps.png" width="1284" height="483" loading="lazy" alt="Biểu đồ cột Precision, Recall và F1 của lớp rời bỏ trên tập Test qua bốn bước: baseline Logistic Regression, Random Forest, thêm class_weight, thêm ngưỡng 0,61."></a>
+        <figcaption>
+          <span class="q">Câu hỏi: mỗi bước cải tiến giúp bắt thêm bao nhiêu khách hàng rời bỏ?</span>
+          <span><strong>class_weight kéo Recall lên (0,43 → 0,71), còn dời ngưỡng lên 0,61 kéo Precision về (0,55 → 0,68)</strong> — kết hợp hai bước cho F1 cao nhất 0,64, bắt thêm 70 khách hàng so với baseline.</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="prose">
-    <h2>Quy trình chung</h2>
+  <!-- 03 · Quy trình -->
+  <section class="section container" id="quy-trinh" aria-labelledby="h-quy-trinh">
+    <div class="section-head" style="margin-bottom:8px">
+      <div><span class="num">§ 03</span><h2 id="h-quy-trinh">Quy trình chung</h2></div>
+      <p>Cả ba bài tập đều đi qua bốn bước, đánh giá trên cùng một tập test.</p>
+    </div>
     <ol class="steps">
-      <li>
-        <span class="n">01</span>
-        <div>
-          <h3>Mô tả tập dữ liệu</h3>
-          <p>Trình bày nguồn gốc, quy mô và ý nghĩa từng trường bằng Markdown,
-          kèm biểu đồ phân phối vẽ bằng Matplotlib, Seaborn hoặc Plotly.</p>
-        </div>
-      </li>
-      <li>
-        <span class="n">02</span>
-        <div>
-          <h3>Chuẩn bị dữ liệu</h3>
-          <p>Xử lý missing values và outliers, encoding cột categorical,
-          scaling cột numerical, chia train / validation / test không rò rỉ dữ liệu.</p>
-        </div>
-      </li>
-      <li>
-        <span class="n">03</span>
-        <div>
-          <h3>Phân tích và mô hình hóa</h3>
-          <p>Huấn luyện bằng Scikit-learn, so sánh nhiều mô hình và bộ tham số
-          trên cùng một tập test.</p>
-        </div>
-      </li>
-      <li>
-        <span class="n">04</span>
-        <div>
-          <h3>Tổng kết và mở rộng</h3>
-          <p>Đánh giá qua độ chính xác và confusion matrix, nêu hạn chế
-          và hướng mở rộng kèm số liệu đối chiếu.</p>
-        </div>
-      </li>
+      <li><span class="n">01</span><h3>Mô tả dữ liệu</h3><p>Trình bày bộ dữ liệu bằng Markdown kèm các biểu đồ phân phối.</p></li>
+      <li><span class="n">02</span><h3>Chuẩn bị dữ liệu</h3><p>Xử lý giá trị thiếu, ngoại lai, mã hoá, chuẩn hoá; chia train / validation / test không rò rỉ.</p></li>
+      <li><span class="n">03</span><h3>Phân tích &amp; mô hình hoá</h3><p>Dùng Scikit-learn, so sánh các mô hình và tham số trên cùng một tập test.</p></li>
+      <li><span class="n">04</span><h3>Tổng kết &amp; mở rộng</h3><p>Độ chính xác, ma trận nhầm lẫn, hạn chế và hướng phát triển.</p></li>
     </ol>
   </section>
 
-  <section>
-    <h2>Công cụ sử dụng</h2>
-    <ul class="stack">
-      <li>Python 3</li><li>NumPy</li><li>pandas</li><li>Matplotlib</li>
-      <li>Seaborn</li><li>Plotly</li><li>Scikit-learn</li><li>OpenCV</li>
-      <li>Google Colab</li><li>Git</li>
-    </ul>
+  <!-- 04 · Nhóm -->
+  <section class="section container" id="nhom" aria-labelledby="h-nhom">
+    <div class="section-head">
+      <div><span class="num">§ 04</span><h2 id="h-nhom">Thành viên nhóm</h2></div>
+      <p>Mỗi thành viên phụ trách trọn vẹn một loại dữ liệu.</p>
+    </div>
+    <div class="grid">
+      <article class="member">
+        <span class="avatar" aria-hidden="true">TĐ</span>
+        <div>
+          <h3>Nguyễn Thành Đạt</h3>
+          <span class="id">MSSV 2670264</span>
+          <p><strong>Tabular</strong> — tiền xử lý, EDA, mô hình hoá</p>
+          <a class="go" href="https://github.com/kuromine19" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+      <article class="member">
+        <span class="avatar" aria-hidden="true">HK</span>
+        <div>
+          <h3>Nguyễn Văn Hoàng Khang</h3>
+          <span class="id">MSSV 2570754</span>
+          <p><strong>Text</strong> — thu thập, vector hoá, mô hình hoá</p>
+          <span class="none">GitHub: chưa cập nhật</span>
+        </div>
+      </article>
+      <article class="member">
+        <span class="avatar" aria-hidden="true">HH</span>
+        <div>
+          <h3>Nguyễn Thị Hồng Hạnh</h3>
+          <span class="id">MSSV 2470316</span>
+          <p><strong>Image</strong> — augmentation, transfer learning</p>
+          <span class="none">GitHub: chưa cập nhật</span>
+        </div>
+      </article>
+    </div>
   </section>
 
-  <script>
-  (function(){
-    var svg = document.getElementById('grid');
-    if(!svg) return;
-    var cs = getComputedStyle(document.documentElement);
-    var stops = ['--v0','--v1','--v2','--v3','--v4','--v5']
-                  .map(function(v){ return cs.getPropertyValue(v).trim(); });
-    function hex2rgb(h){
-      return [parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
-    }
-    var rgbStops = stops.map(hex2rgb);
-    function color(t){
-      t = Math.max(0, Math.min(1, t));
-      var f = t * (rgbStops.length - 1);
-      var i = Math.min(Math.floor(f), rgbStops.length - 2);
-      var k = f - i, a = rgbStops[i], b = rgbStops[i+1];
-      return 'rgb(' + Math.round(a[0]+(b[0]-a[0])*k) + ','
-                    + Math.round(a[1]+(b[1]-a[1])*k) + ','
-                    + Math.round(a[2]+(b[2]-a[2])*k) + ')';
-    }
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function draw(){
-      var w = svg.clientWidth || svg.parentNode.clientWidth;
-      if(!w) return;
-      var cell = w < 560 ? 13 : (w < 900 ? 16 : 19);
-      var gap = 2;
-      var cols = Math.floor(w / (cell + gap));
-      var rows = w < 560 ? 7 : 9;
-      var h = rows * (cell + gap) - gap;
-      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
-      svg.setAttribute('width', w);
-      svg.setAttribute('height', h);
-      while(svg.firstChild) svg.removeChild(svg.firstChild);
-      var frag = document.createDocumentFragment();
-      for(var r = 0; r < rows; r++){
-        for(var c = 0; c < cols; c++){
-          var x = c / cols, y = r / rows;
-          var t = 0.5 + 0.5 * Math.sin(x * 7.4 + y * 2.1) * Math.cos(y * 3.3 - x * 1.7);
-          t = t * 0.82 + 0.09;
-          var rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
-          rect.setAttribute('x', c * (cell + gap));
-          rect.setAttribute('y', r * (cell + gap));
-          rect.setAttribute('width', cell);
-          rect.setAttribute('height', cell);
-          rect.setAttribute('fill', color(t));
-          if(!reduce){
-            rect.style.animationDelay = ((c * 9 + r * 26) / 1000).toFixed(3) + 's';
-          } else {
-            rect.style.opacity = 1; rect.style.animation = 'none';
-          }
-          frag.appendChild(rect);
-        }
-      }
-      svg.appendChild(frag);
-    }
-    draw();
-    var timer;
-    window.addEventListener('resize', function(){
-      clearTimeout(timer); timer = setTimeout(draw, 160);
-    });
-  })();
-  </script>
+  <!-- 05 · Công cụ -->
+  <section class="section container" id="cong-cu" aria-labelledby="h-cong-cu">
+    <div class="section-head">
+      <div><span class="num">§ 05</span><h2 id="h-cong-cu">Công cụ sử dụng</h2></div>
+      <p>Hệ sinh thái Python cho dữ liệu, chạy trên Google Colab.</p>
+    </div>
+    <ul class="stack">
+      <li>Python 3</li><li>NumPy</li><li>pandas</li><li>Matplotlib</li><li>Seaborn</li>
+      <li>Plotly</li><li>Scikit-learn</li><li>OpenCV</li><li>Google Colab</li><li>Git</li>
+    </ul>
+  </section>
+</main>
 
-  <footer>
-    <span>IndexError; · Học kỳ 261, năm học 2026–2027</span>
-    <a href="https://github.com/kuromine19/IndexError-DataViz" rel="noopener">IndexError's Repository</a>
-  </footer>
-
-</div>
+<footer class="footer">
+  <div class="container">
+    <div>
+      <span class="brand">IndexError<span>;</span></span>
+      <small>Học kỳ 261 · Năm học 2026–2027 · Trường Đại học Bách Khoa – ĐHQG-HCM</small>
+    </div>
+    <a class="btn" href="https://github.com/kuromine19/IndexError-DataViz" rel="noopener">Repository trên GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</footer>
 </body>
 </html>
