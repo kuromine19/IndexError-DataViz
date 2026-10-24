@@ -1,17 +1,17 @@
 /* IndexError; — giao diện dùng chung */
 :root{
-  --bg:#F4F3EF;
-  --band:#FBFAF7;
+  --bg:#E8E6DF;
+  --band:#F4F3EF;
   --surface:#FFFFFF;
   --chip:#E9EDE7;
   --chip-ink:#2F4A3D;
   --ink:#2B2B28;
   --ink-strong:#22221F;
-  --ink-2:#55544E;
-  --muted:#74726A;
-  --rule:#E4E1DA;
-  --rule-2:#EEECE6;
-  --line:#D6D3CB;
+  --ink-2:#4A4944;
+  --muted:#64625B;
+  --rule:#D3CFC5;
+  --rule-2:#E4E1DA;
+  --line:#C6C2B7;
   --accent:#3B6250;
   --accent-ink:#28463A;
   --accent-soft:#E9EDE7;
