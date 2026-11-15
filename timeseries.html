@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bài 3: Chuỗi thời gian | IndexError;</title>
+<meta name="description" content="Bài tập con 3 của nhóm IndexError: dự báo PM2.5 trước 24 giờ cho Hà Nội và TP.HCM từ dữ liệu quan trắc tự thu thập.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua điều hướng</a>
+
+<header class="topbar">
+  <div class="container">
+    <a class="brand" href="index.html">IndexError<span>;</span></a>
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a href="tabular.html">Tabular</a>
+      <a href="text.html">Text</a>
+      <a href="timeseries.html" aria-current="page">Time series</a>
+      <a class="gh" href="https://github.com/perckgg/NTLT/tree/main/03_TimeSeries" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-main">
+        <p class="crumb"><a href="index.html">← Trang chính</a></p>
+        <p class="eyebrow">Bài Time series (tự chọn)</p>
+        <h1 class="sub">Dự báo PM2.5 trước 24 giờ: Hà Nội và TP.HCM</h1>
+        <p class="lede">Tại giờ <i>t</i>, dùng lịch sử PM2.5 và thời tiết hiện tại để dự báo PM2.5 lúc <i>t</i> + 24h. Cùng một pipeline được áp dụng riêng cho từng thành phố để trả lời: học máy hơn một dự báo ngây thơ bao nhiêu, và khác biệt đó có thật hay chỉ do may rủi?</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://colab.research.google.com/github/perckgg/NTLT/blob/main/03_TimeSeries/notebooks/03_TimeSeries_Air_Quality.ipynb" rel="noopener">Mở notebook trên Colab</a>
+          <a class="btn btn-ghost" href="#ket-qua">Xem kết quả</a>
+        </div>
+      </div>
+      <aside class="info" aria-label="Tóm tắt bài">
+        <h2 class="info-title">Tóm tắt bài</h2>
+        <dl>
+          <div><dt>Dữ liệu</dt><dd>Tự thu thập qua API: PM2.5 OpenAQ v3 + thời tiết Open-Meteo</dd></div>
+          <div><dt>Quy mô</dt><dd>16.056 giờ × 11 cột mỗi thành phố, 01/12/2024 – 30/09/2026</dd></div>
+          <div><dt>Thiếu dữ liệu</dt><dd>PM2.5 Hà Nội 32,8%, TP.HCM 8,4%</dd></div>
+          <div><dt>Chia tập</dt><dd>70 / 15 / 15 theo thời gian, khoảng đệm 24h</dd></div>
+          <div><dt>Mô hình cuối</dt><dd>Hà Nội: RandomForest · TP.HCM: Ridge</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<main id="main">
+
+  <!-- Kết quả -->
+  <section class="section band" id="ket-qua" aria-labelledby="h-kq">
+  <div class="container">
+    <div class="section-head">
+      <div><h2 id="h-kq">Kết quả trên tập Test</h2></div>
+      <p>Mô hình của mỗi thành phố được chọn trên Validation; Test chỉ dùng đúng một lần. Chỉ chấm trên giá trị PM2.5 đo thật.</p>
+    </div>
+    <dl class="kpis">
+      <div class="kpi"><dt>Hà Nội · MAE</dt><dd><span class="v">8,08 µg/m³</span><span class="d">Naive blend 9,23 → giảm <b>12,5%</b>, CI 95% [+3,2%; +20,0%]</span></dd></div>
+      <div class="kpi"><dt>TP.HCM · MAE</dt><dd><span class="v">8,54 µg/m³</span><span class="d">Naive blend 9,05 → giảm <b>5,6%</b>, CI 95% [−1,3%; +11,8%]</span></dd></div>
+      <div class="kpi"><dt>So với Persistence</dt><dd><span class="v">−16,4% / −10,9%</span><span class="d">cả hai có ý nghĩa thống kê</span></dd></div>
+      <div class="kpi"><dt>Đúng dải nồng độ EPA</dt><dd><span class="v">80,7% / 76,3%</span><span class="d">98,4% / 98,6% lệch tối đa 1 dải</span></dd></div>
+    </dl>
+
+    <h3 class="sub-h">Sản phẩm nộp</h3>
+    <ul class="deliver">
+      <li>
+        <span class="kind">Notebook</span>
+        <a href="https://colab.research.google.com/github/perckgg/NTLT/blob/main/03_TimeSeries/notebooks/03_TimeSeries_Air_Quality.ipynb" rel="noopener">Google Colab ↗</a>
+        <a href="https://github.com/perckgg/NTLT/blob/main/03_TimeSeries/result/03_TimeSeries_Air_Quality_executed.ipynb" rel="noopener">Bản đã chạy trên GitHub ↗</a>
+        <span class="note">Chạy được Run all; dữ liệu tự tải từ GitHub nếu không có sẵn.</span>
+      </li>
+      <li>
+        <span class="kind">Báo cáo PDF</span>
+        <a href="assets/timeseries/03_TimeSeries_Report.pdf">Tải báo cáo PDF ↗</a>
+        <span class="note">Mọi con số được đọc tự động từ notebook đã chạy.</span>
+      </li>
+      <li>
+        <span class="kind">Video trình bày</span>
+        <span class="pending">Chưa cập nhật</span>
+        <span class="note">5–10 phút, YouTube Public hoặc Unlisted.</span>
+      </li>
+    </ul>
+
+    <h3 class="sub-h">Nội dung</h3>
+    <ul class="toc">
+      <li><a href="#eda">1. Mô tả &amp; EDA</a></li>
+      <li><a href="#chuan-bi">2. Chuẩn bị dữ liệu</a></li>
+      <li><a href="#mo-hinh">3. Mô hình hoá</a></li>
+      <li><a href="#danh-gia">4. Đánh giá &amp; phân tích lỗi</a></li>
+      <li><a href="#ket-luan">5. Kết luận</a></li>
+    </ul>
+  </div>
+  </section>
+
+  <!-- 1. EDA -->
+  <section class="section" id="eda" aria-labelledby="h-eda">
+  <div class="container">
+    <div class="section-head">
+      <div><h2 id="h-eda">Mô tả dữ liệu &amp; EDA</h2></div>
+      <p>Mỗi thành phố một trạm quan trắc, ghép với thời tiết cùng giờ trên một lưới giờ đầy đủ; giờ không có số đo để trống (NaN).</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="kv">
+        <tr><th>PM2.5 Hà Nội</th><td>OpenAQ v3, trạm 46 Lưu Quang Vũ (mạng quan trắc Hà Nội). Thiếu 32,8% số giờ; từ 11/2025 mỗi tháng thiếu 31–97% và trạm hầu như không báo số liệu buổi chiều</td></tr>
+        <tr><th>PM2.5 TP.HCM</th><td>OpenAQ v3, trạm CMT8 (cảm biến giá rẻ AirGradient). Thiếu 8,4%</td></tr>
+        <tr><th>Thời tiết</th><td>Open-Meteo Historical Weather: nhiệt độ, độ ẩm, mưa, tốc độ và hướng gió, áp suất, mây. Không thiếu giờ nào</td></tr>
+        <tr><th>Ngưỡng WHO</th><td>15 µg/m³ là ngưỡng cho <b>trung bình 24 giờ</b>, nên so với trung bình ngày (ngày có ≥ 18 giờ đo): vượt ngưỡng ở 91,3% số ngày hợp lệ tại Hà Nội và 98,2% tại TP.HCM</td></tr>
+        <tr><th>Tự tương quan</th><td>0,92 / 0,88 ở độ trễ 1 giờ nhưng chỉ 0,56 / 0,45 ở độ trễ 24 giờ: dự báo trước một ngày khó hơn nhiều so với dự báo giờ kế tiếp</td></tr>
+      </table>
+    </div>
+
+    <div class="figs" style="margin-top:20px">
+      <figure class="fig">
+        <a class="plate wide" href="assets/timeseries/daily.png"><img src="assets/timeseries/daily.png" width="1169" height="454" loading="lazy" alt="Trung bình PM2.5 theo ngày của Hà Nội và TP.HCM so với ngưỡng WHO 15 µg/m³."></a>
+        <figcaption>Trung bình PM2.5 theo ngày (chỉ những ngày có ≥ 18 giờ đo) so với ngưỡng WHO. Hà Nội có mùa ô nhiễm mùa đông rõ rệt: trung bình tháng 1 là 55,0 µg/m³, tháng 8 là 19,4 µg/m³, chênh gần 3 lần. TP.HCM dao động hẹp hơn (tháng 1 là 46,2, tháng 7 là 23,5).</figcaption>
+      </figure>
+      <figure class="fig">
+        <a class="plate wide" href="assets/timeseries/cycle.png"><img src="assets/timeseries/cycle.png" width="1387" height="387" loading="lazy" alt="Trung bình PM2.5 theo giờ trong ngày, mùa khô và mùa mưa, mỗi thành phố một ô."></a>
+        <figcaption>Chu kỳ trong ngày, chỉ dùng những ngày có ≥ 18 giờ đo. Nếu không lọc, việc Hà Nội thiếu buổi chiều sau 11/2025 sẽ tạo ra một đỉnh giả lúc 12h. TP.HCM đạt đỉnh giờ cao điểm 7h (45,7 µg/m³ vào tháng 11–4); Hà Nội mùa khô cao nhất quanh 0h (43,4) và thấp nhất lúc 17h (38,7).</figcaption>
+      </figure>
+    </div>
+  </div>
+  </section>
+
+  <!-- 2. Chuẩn bị -->
+  <section class="section band" id="chuan-bi" aria-labelledby="h-cb">
+  <div class="container">
+    <div class="section-head">
+      <div><h2 id="h-cb">Chuẩn bị dữ liệu</h2></div>
+      <p>Nguyên tắc xuyên suốt: mọi đặc trưng tại giờ <i>t</i> chỉ được dùng dữ liệu có đến giờ <i>t</i>.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data wrap">
+        <thead><tr><th scope="col">Bước</th><th scope="col">Cách làm</th><th scope="col">Lý do</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Giá trị sai</th><td>PM2.5 ≤ 0 hoặc &gt; 1000 µg/m³ đặt thành NaN</td><td>Lỗi cảm biến (Hà Nội có 4 giá trị bằng 0)</td></tr>
+          <tr><th scope="row">Giá trị thiếu</th><td>Đặc trưng: forward-fill tối đa 6 giờ. Target: chỉ giá trị đo thật</td><td>Nội suy hai phía dùng số đo <i>sau</i> khoảng trống, tức nhìn trước tương lai</td></tr>
+          <tr><th scope="row">Ngoại lai</th><td>Giữ trong target; chỉ cắt (clip) đặc trưng PM2.5 bằng <code>IQRClipper</code> với k = 3, ngưỡng học trên Train</td><td>Đỉnh ô nhiễm là sự kiện thật; bỏ đi sẽ làm kết quả đẹp giả</td></tr>
+          <tr><th scope="row">Đặc trưng</th><td>23 cột: độ trễ và thống kê trượt của PM2.5, thời tiết, giờ dạng sin/cos; mùa, thứ trong tuần, hướng gió 8 hướng (one-hot)</td><td>Giờ và mùa tính tại thời điểm <i>t</i> + 24h, biết trước nên không rò rỉ</td></tr>
+          <tr><th scope="row">Chia tập</th><td>70 / 15 / 15 theo thời gian, bỏ 24h trước mỗi ranh giới</td><td>Target 24h của tập trước không rơi vào khoảng thời gian của tập sau</td></tr>
+        </tbody>
+        <caption>Toàn bộ tiền xử lý nằm trong một <code>ColumnTransformer</code> + <code>Pipeline</code> chỉ fit trên Train. Train / Validation / Test: Hà Nội 6.884 / 1.462 / 1.481 mẫu, TP.HCM 10.177 / 2.161 / 2.185 mẫu.</caption>
+      </table>
+    </div>
+
+    <div class="figs" style="margin-top:20px">
+      <figure class="fig">
+        <a class="plate wide" href="assets/timeseries/split.png"><img src="assets/timeseries/split.png" width="1387" height="587" loading="lazy" alt="Chia Train, Validation, Test theo thời gian cho hai thành phố."></a>
+        <figcaption>Chia tập theo thời gian. Trung bình target giảm dần từ Train sang Test (Hà Nội 33,5 → 30,1 → 25,5 µg/m³) vì các tập sau rơi vào mùa sạch hơn. Do Hà Nội thiếu nhiều dữ liệu, Test của Hà Nội bắt đầu từ 26/02/2026, còn của TP.HCM từ 30/06/2026, nên chỉ so mức cải thiện tương đối giữa hai thành phố.</figcaption>
+      </figure>
+    </div>
+  </div>
+  </section>
+
+  <!-- 3. Mô hình -->
+  <section class="section" id="mo-hinh" aria-labelledby="h-mh">
+  <div class="container">
+    <div class="section-head">
+      <div><h2 id="h-mh">Mô hình hoá</h2></div>
+      <p>Ba baseline ngây thơ và ba mô hình Scikit-learn. Siêu tham số chọn bằng <code>GridSearchCV</code> với <code>TimeSeriesSplit(n_splits=3, gap=24)</code>, tiêu chí MAE.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th scope="col">Mô hình (Validation)</th><th scope="col">MAE Hà Nội</th><th scope="col">MAE TP.HCM</th><th scope="col">R² Hà Nội</th><th scope="col">R² TP.HCM</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Persistence: ŷ = PM2.5(<i>t</i>)</th><td class="num">13,48</td><td class="num">7,66</td><td class="num">0,006</td><td class="num">−0,129</td></tr>
+          <tr><th scope="row">Trung bình 24h</th><td class="num">13,75</td><td class="num">7,72</td><td class="num">0,092</td><td class="num">0,005</td></tr>
+          <tr><th scope="row">Naive blend: w·hiện tại + (1−w)·TB 24h</th><td class="num">13,01</td><td class="num">7,06</td><td class="num">0,135</td><td class="num">0,106</td></tr>
+          <tr><th scope="row">Ridge</th><td class="num">12,10</td><td class="num best">7,03</td><td class="num">0,326</td><td class="num best">0,154</td></tr>
+          <tr><th scope="row">RandomForest</th><td class="num best">12,00</td><td class="num">7,50</td><td class="num best">0,337</td><td class="num">0,084</td></tr>
+          <tr><th scope="row">HistGradientBoosting</th><td class="num">12,47</td><td class="num">7,46</td><td class="num">0,246</td><td class="num">0,091</td></tr>
+        </tbody>
+        <caption>Trọng số w của Naive blend học trên Train (0,45 ở Hà Nội, 0,50 ở TP.HCM). Ở TP.HCM chỉ Ridge thắng Naive blend, và chỉ rất sát (7,03 so với 7,06); hai mô hình cây còn kém hơn blend.</caption>
+      </table>
+    </div>
+  </div>
+  </section>
+
+  <!-- 4. Đánh giá -->
+  <section class="section band" id="danh-gia" aria-labelledby="h-dg">
+  <div class="container">
+    <div class="section-head">
+      <div><h2 id="h-dg">Đánh giá &amp; phân tích lỗi</h2></div>
+      <p>Mỗi mô hình được train lại trên Train + Validation rồi đánh giá một lần trên Test.</p>
+    </div>
+
+    <div class="figs">
+      <figure class="fig">
+        <a class="plate wide" href="assets/timeseries/mae.png"><img src="assets/timeseries/mae.png" width="1008" height="498" loading="lazy" alt="MAE trên Test của từng mô hình ở hai thành phố, nhãn là mức giảm so với Naive blend."></a>
+        <figcaption>MAE trên Test; nhãn là mức giảm MAE so với Naive blend (dương là tốt hơn). Nếu chỉ so với Persistence, học máy trông như giảm 16,4% / 10,9%, nhưng một phần mức giảm đó chỉ đến từ việc làm trơn giá trị hiện tại với trung bình 24h.</figcaption>
+      </figure>
+      <figure class="fig">
+        <a class="plate wide" href="assets/timeseries/boot.png"><img src="assets/timeseries/boot.png" width="1487" height="467" loading="lazy" alt="Forest plot khoảng tin cậy 95% của mức giảm MAE, Validation và Test."></a>
+        <figcaption>Khác biệt có thật không? Block bootstrap không chồng khối (Carlstein, 1986): gom giờ thành khối 3 ngày, lấy lại 2.000 lần. Hà Nội: RandomForest hơn Naive blend có ý nghĩa (+12,5%, CI [+3,2%; +20,0%]). TP.HCM: mức +5,6% so với Naive blend <b>không</b> có ý nghĩa (CI [−1,3%; +11,8%]), dù dùng khối 1, 3 hay 7 ngày. Các mô hình học máy của Hà Nội không phân biệt được với nhau.</figcaption>
+      </figure>
+      <figure class="fig">
+        <a class="plate wide" href="assets/timeseries/forecast.png"><img src="assets/timeseries/forecast.png" width="1387" height="787" loading="lazy" alt="Dự báo và thực tế trong 14 ngày đầu của Test."></a>
+        <figcaption>14 ngày đầu của Test. Hà Nội: MAE 10,08 (RandomForest) so với 12,98 (Naive blend). TP.HCM gần như hoà (6,96 so với 6,81). Dự báo trơn hơn thực tế nhiều: độ lệch chuẩn chỉ bằng khoảng một nửa (Hà Nội 8,8 so với 16,3 µg/m³), nên các đỉnh ngắn bị bỏ sót.</figcaption>
+      </figure>
+      <div class="figs two">
+        <figure class="fig">
+          <a class="plate" href="assets/timeseries/aqi.png"><img src="assets/timeseries/aqi.png" width="1583" height="487" loading="lazy" alt="Ma trận nhầm lẫn theo dải nồng độ EPA."></a>
+          <figcaption>Ma trận nhầm lẫn theo dải nồng độ PM2.5 của US EPA (áp dụng cho giá trị theo giờ, không phải chỉ số AQI chính thức). Lỗi chính là dự báo thấp giờ ô nhiễm: ở TP.HCM 286 trong 359 giờ "USG" bị đoán là "Moderate".</figcaption>
+        </figure>
+        <figure class="fig">
+          <a class="plate" href="assets/timeseries/importance.png"><img src="assets/timeseries/importance.png" width="1587" height="487" loading="lazy" alt="Permutation importance của mô hình tốt nhất mỗi thành phố."></a>
+          <figcaption>Permutation importance trên Test. Vì các đặc trưng trễ của PM2.5 tương quan mạnh với nhau, nhóm còn xáo trộn theo cả nhóm đặc trưng. Lịch sử PM2.5 quan trọng nhất ở cả hai nơi (+0,78 / +1,81 µg/m³); TP.HCM phụ thuộc thêm vào nhiệt độ, giờ trong ngày và gió.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- 5. Kết luận -->
+  <section class="section" id="ket-luan" aria-labelledby="h-kl">
+  <div class="container">
+    <div class="section-head">
+      <div><h2 id="h-kl">Kết luận</h2></div>
+    </div>
+    <div class="prose">
+      <ul>
+        <li><b>Hà Nội:</b> học máy giảm MAE khoảng 12% so với dự báo ngây thơ tốt nhất, và mức giảm này có ý nghĩa thống kê. Tuy vậy chưa xác định được mô hình nào tốt nhất.</li>
+        <li><b>TP.HCM:</b> học máy hơn Persistence một cách có ý nghĩa, nhưng <b>chưa chứng minh được</b> là hơn Naive blend; mô hình cây không giúp gì so với Ridge.</li>
+        <li><b>Hạn chế:</b> mỗi thành phố chỉ có một trạm; dữ liệu Hà Nội suy giảm từ 11/2025 khiến Validation và Test nhỏ, thiếu buổi chiều; chỉ có 22 tháng dữ liệu; mô hình dự báo thấp các giờ ô nhiễm nặng.</li>
+        <li><b>Hướng phát triển:</b> dùng dự báo thời tiết cho thời điểm <i>t</i> + 24h, thêm trạm đo, hồi quy phân vị hoặc bộ phân loại vượt ngưỡng để cảnh báo sớm.</li>
+      </ul>
+    </div>
+  </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <span class="foot-meta"><span class="brand">IndexError;</span><span>Bài Time series, phụ trách: Nguyễn Văn Hoàng Khang (MSSV 2570754)</span></span>
+    <a class="btn" href="index.html">← Về trang chính</a>
+  </div>
+</footer>
+</body>
+</html>
