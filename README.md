@@ -11,7 +11,9 @@ Học kỳ 261, năm học 2026–2027 · Giảng viên: Lê Thành Sách
 | `index.html` | Landing page — thông tin môn học, 3 bài con, kết quả nổi bật, nhóm |
 | `tabular.html` | Bài con 1 — dữ liệu bảng (bắt buộc), nhúng toàn bộ kết quả notebook |
 | `text.html` | Bài con 2 — dữ liệu văn bản (bắt buộc) |
-| `image.html` | Bài con 3 — dữ liệu ảnh (tự chọn) |
+| `timeseries.html` | Bài con 3 — chuỗi thời gian (tự chọn): dự báo PM2.5 Hà Nội và TP.HCM; mã nguồn ở [perckgg/NTLT](https://github.com/perckgg/NTLT/tree/main/03_TimeSeries) |
+| `image.html` | Chỉ còn chuyển hướng sang `timeseries.html` (để các liên kết "Image" cũ không bị hỏng) |
+| `assets/timeseries/` | 9 hình và báo cáo PDF lấy từ notebook bài Time series đã chạy |
 | `styles.css` | Giao diện dùng chung (Be Vietnam Pro / Newsreader / JetBrains Mono, có dark mode) |
 | `01_Tabular_Customer_Churn.ipynb` | Notebook bài 1, đã chạy đủ output |
 | `assets/tabular/` | 14 hình trích từ output của notebook bài 1 |
