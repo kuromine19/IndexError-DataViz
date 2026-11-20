@@ -10,7 +10,7 @@ Học kỳ 261, năm học 2026–2027 · Giảng viên: Lê Thành Sách
 |---|---|
 | `index.html` | Landing page — thông tin môn học, 3 bài con, kết quả nổi bật, nhóm |
 | `tabular.html` | Bài con 1 — dữ liệu bảng (bắt buộc), nhúng toàn bộ kết quả notebook |
-| `text.html` | Bài con 2 — dữ liệu văn bản (bắt buộc) |
+| `text.html` | Bài con 2 — dữ liệu văn bản (bắt buộc) ; mã nguồn ở|https://nguyenmy1234.github.io/Text/
 | `timeseries.html` | Bài con 3 — chuỗi thời gian (tự chọn): dự báo PM2.5 Hà Nội và TP.HCM; mã nguồn ở [perckgg/NTLT](https://github.com/perckgg/NTLT/tree/main/03_TimeSeries) |
 | `image.html` | Chỉ còn chuyển hướng sang `timeseries.html` (để các liên kết "Image" cũ không bị hỏng) |
 | `assets/timeseries/` | 9 hình và báo cáo PDF lấy từ notebook bài Time series đã chạy |
